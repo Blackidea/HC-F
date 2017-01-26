@@ -1,6 +1,9 @@
 /upload
 /bitrix/updates
+/bitrix/php_interface/dbconn.php
+/bitrix/.settings.php
 /bitrix/image_uploader
+/bitrix/managed_cache/MYSQL
 /bitrix/images
 /bitrix/activities/bitrix
 /bitrix/cache

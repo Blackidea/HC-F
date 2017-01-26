@@ -1,1 +1,0 @@
-<? $arFilesInfo = array( 'FILES' => array("/bitrix/templates/Holiday/components/bitrix/menu/main_top/script.js" => "1485451256543","/bitrix/templates/Holiday/components/bitrix/menu/footer_soiskateli/script.js" => "1485451256543",), 'CUR_SEL_CNT' => '0', 'CUR_IE_CNT' => '0'); ?>

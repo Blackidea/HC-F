@@ -44,10 +44,10 @@ return array (
       'default' => 
       array (
         'className' => '\\Bitrix\\Main\\DB\\MysqliConnection',
-        'host' => 'localhost',
-        'database' => 'bitrix_58',
-        'login' => 'root',
-        'password' => '',
+        'host' => 'zmly1.spectrum.myjino.ru',
+        'database' => '629975_bx1',
+        'login' => '629975_bx1',
+        'password' => 'pRqUJpj3b59',
         'options' => 2,
       ),
     ),

@@ -2,10 +2,10 @@
 define("BX_USE_MYSQLI", true);
 define("DBPersistent", false);
 $DBType = "mysql";
-$DBHost = "localhost";
-$DBLogin = "root";
-$DBPassword = "";
-$DBName = "bitrix_58";
+$DBHost = "zmly1.spectrum.myjino.ru";
+$DBLogin = "629975_bx1";
+$DBPassword = "pRqUJpj3b59";
+$DBName = "629975_bx1";
 $DBDebug = false;
 $DBDebugToFile = false;
 
