@@ -29,7 +29,21 @@ $this->setFrameMode(true);?>
     margin-top: -5%;
 }
    
-</style>
+</style> 
+<?  
+//echo "<pre>";
+//print_r($arResult);
+//echo "</pre>";
+$filtered_count = $arResult['filtered_count']; // кол во фильтрованых
+$GLOBALS['filtered_count'] = $filtered_count;  // объявляем глобально
+// задаем номер страницы
+if($_GET['PAGEN_1']==""){
+    $page = 1;
+}
+else{
+    $page = $_GET['PAGEN_1'];
+}
+?>
 <div class="js-pager-wrepper" style="display: none;">
 <?if($arParams["DISPLAY_TOP_PAGER"]):?>
 	<?=$arResult["NAV_STRING"]?><br />
@@ -43,15 +57,12 @@ $this->setFrameMode(true);?>
     $_POST['my_count'] = $my_cout;
     ?>
 
+    <?//echo $GLOBALS['filtered_count']?>
 
-
-<?foreach($arResult["ITEMS"] as $arItem):?>
+<?foreach($arResult["ITEMS"] as $index=>$arItem):?>
 <? 
-//echo "<pre>";
-//print_r($arItem);
-//echo "</pre>";
-    
-
+   // echo $index;
+   // if($index == $page)
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	if($arItem['PREVIEW_PICTURE']['SRC']==""){
@@ -61,9 +72,19 @@ $this->setFrameMode(true);?>
         $image = $arItem['PREVIEW_PICTURE']['SRC'];
     }
     ?>
-    
+    <?
+    if($index==4&&$page==1){?>
+        <!-- случайный рецепт -->	
+                 <div class="item random-recipe">
+						<div class="item_image"><a href="<?=$arItem["DETAIL_PAGE_URL"]?> "><img src="/bitrix/templates/Holiday/img/pic/recept_item_default.jpg" title="Случайный рецепт" alt="Случайный рецепт"/></a></div>
+						<div class="item_text">
+							<div class="item_title">случайный рецепт</div>		
+						</div>
+					</div>
+    <?}
+    else{?>
                     <div class="item">
-						<div class="item_image"><a href="<?=$arItem["DETAIL_PAGE_URL"]?> "><img src="<?=$image?>" title="<?echo $arItem["NAME"]?>" alt="<?echo $arItem["NAME"]?>"/></a></div>
+						<div class="item_image"><a class="recipe-link" href="<?=$arItem["DETAIL_PAGE_URL"]?> "><img src="<?=$image?>" title="<?echo $arItem["NAME"]?>" alt="<?echo $arItem["NAME"]?>"/></a></div>
 						<div class="item_text">
 							<div class="item_title"><?echo $arItem["NAME"]?></div>
 							<div class="item_bar">
@@ -132,8 +153,12 @@ $this->setFrameMode(true);?>
 							</div>
 						</div>
 					</div>
+    <?}?>
+    
                     
-<?endforeach;?>							
+                    
+<?endforeach;?>	
+					
 <?}
 else{
     echo "Рецептов по Вашему запросу не найдено";

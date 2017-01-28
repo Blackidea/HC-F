@@ -50,8 +50,9 @@ $APPLICATION->SetTitle("Главная");
 		"PARENT_SECTION_CODE" => "",	// Код раздела
 		"PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
 		"PROPERTY_CODE" => array(	// Свойства
-			0 => "",
-			1 => "",
+			0 => "bigImg",
+			1 => "minImg",
+            2 => "link_to",
 		),
 		"SET_BROWSER_TITLE" => "N",	// Устанавливать заголовок окна браузера
 		"SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
@@ -67,11 +68,6 @@ $APPLICATION->SetTitle("Главная");
 	),
 	false
 );?>
-	  <?$APPLICATION->IncludeFile(
-			$APPLICATION->GetTemplatePath("include_areas/slider-main.php"),
-			Array(),
-			Array("MODE"=>"php")
-		);?>
 		<!-- RECEPTS -->
         <?$APPLICATION->IncludeFile(
 			$APPLICATION->GetTemplatePath("include_areas/recipts.php"),

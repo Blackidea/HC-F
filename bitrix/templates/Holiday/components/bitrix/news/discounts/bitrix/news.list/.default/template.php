@@ -38,7 +38,7 @@ $this->setFrameMode(true);
     <div class="container">
         <h2><?$APPLICATION->ShowTitle()?></h2>
         <div class="discounts_list row">
-            <?foreach($arResult["ITEMS"] as $arItem):?>
+            <?foreach($arResult["ITEMS"] as $index=> $arItem):?>
                 <?
             	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
             	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
@@ -60,13 +60,14 @@ $this->setFrameMode(true);
 				    </div>
                 </div>
             <?endforeach;?>
+            <?//print_r($arResult["ITEMS"]);?>
         </div>
         <div class="loading-gif">
             <img src="<?=$APPLICATION->GetTemplatePath("img")?>/loading.gif"/>
         </div>
-        <div class="text-center">
-            <a href="#" data-counter="<?=$GLOBALS['pagesCount']?>" class="js-more-discounts button">Показать еще</a>
-            
+       <?echo  $arResult['filtered_count'];?>
+        <div class="text-center <?if($arResult['total_count']<=$arParams["NEWS_COUNT"] || $arResult['filtered_count']<=$arParams["NEWS_COUNT"]) :?>hidden<?endif?>">
+            <a href="#" data-counter="<?=$GLOBALS['pagesCount']?>" class="js-more-discounts button">Показать еще</a>            
         </div>
         
     </div>

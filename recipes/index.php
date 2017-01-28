@@ -5,6 +5,14 @@ if (!CModule::IncludeModule('highloadblock')) {
     echo 'highloadblock module not found';
     die();
 }
+/*if($_GET['showall']=="y"){
+    $NEWS_COUNT = "";
+}
+else{
+    $NEWS_COUNT= 5;
+}
+
+$showAll = 'N';*/
 use Bitrix\Highloadblock as HL;
 use Bitrix\Main\Entity;
 
@@ -72,7 +80,7 @@ array_push($arrFilter2 , $arrFilter);
 			<div class="filter_recepts">
 				<div class="container">
 					<div class="row">
-                        <form action="/recipes/index.php" method="GET">
+                        <form name="search-recipe" action="/recipes/index.php" method="GET">
     						<div class="col-md-6 border_right">
     							<div class="title">Категория</div>
     							<div class="chekbox_list">
@@ -91,8 +99,8 @@ array_push($arrFilter2 , $arrFilter);
     							<div class="title">Сложность</div>
                                 
     							<div class="check_ratio">
-                                    <input type="hidden" name="uroven" value="1"/>
-    								<a class="active" href="#" onclick="setRatio(1);">
+                                    <input type="hidden" name="uroven" value=""/>
+    								<a <?if($_GET['uroven']==1):?>class="active"<?endif;?> href="#" onclick="setRatio(1);">
     									<span>
     										<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     											 viewBox="360.9 161 236.2 208.6" xml:space="preserve">
@@ -110,7 +118,7 @@ array_push($arrFilter2 , $arrFilter);
     										</svg>
     									</span>
     								</a>
-    								<a href="#" onclick="setRatio(2);">
+    								<a  <?if($_GET['uroven']==2):?>class="active"<?endif;?> href="#" onclick="setRatio(2);">
     									<span>
     										<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     											 viewBox="360.9 161 236.2 208.6" xml:space="preserve">
@@ -144,7 +152,7 @@ array_push($arrFilter2 , $arrFilter);
     										</svg>
     									</span>
     								</a>
-    								<a href="#" onclick="setRatio(3);">
+    								<a  <?if($_GET['uroven']==3):?>class="active"<?endif;?> href="#" onclick="setRatio(3);">
     									<span>
     										<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     											 viewBox="360.9 161 236.2 208.6" xml:space="preserve">
@@ -315,7 +323,11 @@ array_push($arrFilter2 , $arrFilter);
                 <div class="loading-gif">
                     <img src="<?=$APPLICATION->GetTemplatePath("img")?>/loading.gif"/>
                 </div>
+                 <?
+               // echo $_POST['my_count'];
+                 //echo "FILTERED GLOBAL:".$GLOBALS['filtered_count'] total_count?>
                 <?if($_POST['my_count']>0):?>
+                
 				<div class="text-center">
 					<a href="#" class="button js-more-news">Показать еще</a>
 				</div>
