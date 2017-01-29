@@ -47,7 +47,11 @@
 								c-32.4,0-58.8-26.4-58.8-58.8s26.4-58.8,58.8-58.8s58.8,26.4,58.8,58.8c0,14-5,27.6-14.1,38.2c-2.1,2.4-3.1,5.5-2.8,8.7
 								C522,294.9,523.5,297.8,525.9,299.9z"/>
 							</svg>
-							<span>Новосибирск</span>
+                            <!--<span>Новосибирск</span> -->
+                            <?if($_SESSION["ALTASIB_GEOBASE"]["CITY_NAME"] != ""){
+                                echo "<span>".$_SESSION["ALTASIB_GEOBASE_CODE"]["CITY"]["NAME"]."</span>";
+                            }?>
+							
 						</a>
 						<div class="user_autorization">
                         <?if($USER->IsAuthorized()){?>

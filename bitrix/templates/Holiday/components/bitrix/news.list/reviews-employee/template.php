@@ -42,7 +42,7 @@ $innerIndex = 0;
 </style>
 		<section class="reviews_agenstva">
 			<div class="container">
-				<h2>Отзывы кадровых агентств</h2>
+				<h2>Отзывы сотрудников</h2>
 				<div class="reviews_list row">
                     <div class="js-pager-wrepper" style="display: none;">
                     <?if($arParams["DISPLAY_TOP_PAGER"]):?>

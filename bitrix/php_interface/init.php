@@ -10,6 +10,8 @@ function FunctionName(params)
 */
 AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("holiday", "genJsonData"));
 AddEventHandler("iblock", "OnAfterIBlockElementAdd", Array("holiday", "genJsonData"));
+
+
  
 class holiday{
     

@@ -41,11 +41,11 @@ $this->setFrameMode(true);
     <?else:?>
     <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
     	<div class="item">
-    	<a data-showpage="2" href="#">
-        	<?foreach($arItem['PROPERTIES']["preview_images"]["VALUE"] as $index=>$imageID):?>
-                 <img src="<?= CFile::GetPath($imageID);?>" alt="">
-            <?endforeach;?>
-    	</a>
+        	<a data-showpage="2" href="#">
+            	<?foreach($arItem['PROPERTIES']["preview_images"]["VALUE"] as $index=>$imageID):?>
+                     <img src="<?= CFile::GetPath($imageID);?>" alt="">
+                <?endforeach;?>
+        	</a>
     	</div>
 	</div>
     <?endif;?>

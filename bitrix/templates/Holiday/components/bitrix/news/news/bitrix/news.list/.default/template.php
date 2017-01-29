@@ -74,12 +74,3 @@ $this->setFrameMode(true);
     </div>
 </section>
 <!-- SUBSCRIBE -->
-<section class="subscribe">
-    <div class="conteiner-fluid">
-        <div class="title">Подпишитесь на нашу новостную рассылку, <br>и будьте в курсе последних событий!</div>
-        <form action="">
-            <input type="text" placeholder="Email">
-            <input type="submit" value="Подписаться">
-        </form>
-    </div>
-</section>

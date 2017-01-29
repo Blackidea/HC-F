@@ -110,6 +110,7 @@ $APPLICATION->SetTitle("Контакты");
 			</div>
 		</section>
 		<!-- FEEDBACK -->
+        </div><!-- container -->
 		<section class="feedback feedback_contact">
 			<div class="feedback_container">
 				<h2>Обратная связь</h2>
@@ -159,6 +160,7 @@ $APPLICATION->SetTitle("Контакты");
 			</div>
 			</div>
 		</section>
+        <div class="container">
 		<!-- FOOTER -->
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

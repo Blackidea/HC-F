@@ -1,5 +1,5 @@
 $(document).ready(function(){
-$('input[name="form_hidden_36"]').val(document.title);
+$('input[name="form_hidden_36"]').val(document.title+ " "+window.location.href);
 
     var loading = $('.loading-gif');
     var more = $('.js-more-discounts');

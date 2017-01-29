@@ -3,8 +3,36 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Холидей главная");
 $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 $APPLICATION->SetTitle("Главная");
+
+
+
 ?> <!-- SLIDER -->
-    <?$APPLICATION->IncludeComponent("bitrix:news.list", "slider-main", Array(
+    <?
+
+if (!CModule::IncludeModule('highloadblock')) {
+    echo 'highloadblock module not found';
+    die();
+}
+use Bitrix\Highloadblock as HL;
+use Bitrix\Main\Entity;
+
+$hlArray = holiday::getHload('b_hlbd_citiesforactions');
+$citiesforactions  = holiday::getAllData($hlArray);
+
+$filter_cities = array("LOGIC" => "OR");
+foreach($citiesforactions as $index=>$value){
+
+       if($value['UF_NAME']==$_SESSION["ALTASIB_GEOBASE_CODE"]["CITY"]['NAME']){
+            array_push ($filter_cities, array('PROPERTY_ACTIVE_CITY'=> $value['UF_XML_ID']));
+       }
+}
+array_push ($filter_cities, array('PROPERTY_ACTIVE_CITY'=> "6XAr5Qbi")); 
+GLOBAL $arrFilter;
+
+$arrFilter = array('ACTIVE' => 'Y');
+array_push ($arrFilter, $filter_cities);
+
+        $APPLICATION->IncludeComponent("bitrix:news.list", "slider-main", Array(
 	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
 		"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
 		"AJAX_MODE" => "N",	// Включить режим AJAX
@@ -31,7 +59,7 @@ $APPLICATION->SetTitle("Главная");
 			3 => "DETAIL_PICTURE",
 			4 => "",
 		),
-		"FILTER_NAME" => "",	// Фильтр
+		"FILTER_NAME" => "arrFilter",	// Фильтр
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
 		"IBLOCK_ID" => "27",	// Код информационного блока
 		"IBLOCK_TYPE" => "discounts",	// Тип информационного блока (используется только для проверки)
@@ -67,7 +95,8 @@ $APPLICATION->SetTitle("Главная");
 		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
 	),
 	false
-);?>
+);
+?>
 		<!-- RECEPTS -->
         <?$APPLICATION->IncludeFile(
 			$APPLICATION->GetTemplatePath("include_areas/recipts.php"),
@@ -88,4 +117,7 @@ $APPLICATION->SetTitle("Главная");
 			Array(),
 			Array("MODE"=>"html")
 		);?>
+        
+        
+        
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
