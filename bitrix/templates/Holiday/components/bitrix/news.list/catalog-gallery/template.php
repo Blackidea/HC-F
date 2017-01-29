@@ -23,12 +23,14 @@ $this->setFrameMode(true);
 
 ?>
 <div class="catalog_list row">
+<?//print_r($arResult['ITEMS'])?>
 <?foreach($arResult["ITEMS"] as $arItem):?>
 	<?
+    
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
-    <?if($arItem['PROPERTIES']['first_page']['VALUE'][0]=="Äà"):?>
+    <?if($arItem['PROPERTIES']['first_page']['VALUE'][0]=="Ð”Ð°"):?>
     <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
     	<div class="item">
         	<a data-showpage="1" href="#">

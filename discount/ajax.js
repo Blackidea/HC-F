@@ -1,6 +1,5 @@
-<script>
 $(document).ready(function(){
-    
+$('input[name="form_hidden_36"]').val(document.title);
 
     var loading = $('.loading-gif');
     var more = $('.js-more-discounts');
@@ -52,4 +51,3 @@ function genUrl(){
     url = "?PAGEN_1="+getNextPage();
     return url;
 }
-</script>

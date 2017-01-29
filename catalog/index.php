@@ -178,10 +178,13 @@ $APPLICATION->SetTitle("Каталог");
                 		"SORT_ORDER2" => "ASC"
                 	)
                 );?>
-			     
-                
-                
-			</div>
+	</div>
 		</section>
+        <!-- MAP --> 
+		<?$APPLICATION->IncludeFile(
+			$APPLICATION->GetTemplatePath("include_areas/map.php"),
+			Array(),
+			Array("MODE"=>"html")
+		);?>
   <div class="container">
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

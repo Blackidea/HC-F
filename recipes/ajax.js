@@ -62,6 +62,7 @@ $(document).ready(function(){
         	  }
           });
     })
+   
 })
 function checkMoreAvailible(){
     if(parseInt($('input[name="pageCur"]').val())>= parseInt($('input[name="pageCount"]').val())){

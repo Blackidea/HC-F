@@ -10,8 +10,12 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
+//echo $templateFolder;
+?>
+<script src="<?$_SERVER["DOCUMENT_ROOT"]."/discount/ajax.js"?>"></script>
 
-require_once($_SERVER["DOCUMENT_ROOT"]."/discount/ajax.js"); 
+<?
+//require_once($_SERVER["DOCUMENT_ROOT"]."/discount/ajax.js"); 
 $this->setFrameMode(true);
 ?>
 <style>
@@ -65,9 +69,10 @@ $this->setFrameMode(true);
         <div class="loading-gif">
             <img src="<?=$APPLICATION->GetTemplatePath("img")?>/loading.gif"/>
         </div>
-       <?echo  $arResult['filtered_count'];?>
-        <div class="text-center <?if($arResult['total_count']<=$arParams["NEWS_COUNT"] || $arResult['filtered_count']<=$arParams["NEWS_COUNT"]) :?>hidden<?endif?>">
-            <a href="#" data-counter="<?=$GLOBALS['pagesCount']?>" class="js-more-discounts button">Показать еще</a>            
+
+        <div class="text-center <?if($arResult['total_count']<$arParams["NEWS_COUNT"]):?>hidden<?endif?>">
+            <a href="#" data-counter="<?=$GLOBALS['pagesCount']?>" class="js-more-discounts button">Показать еще</a>
+            
         </div>
         
     </div>

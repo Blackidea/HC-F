@@ -166,7 +166,7 @@ $this->setFrameMode(true);
 										l85.2,57.6L28.7,326.8z M28.7,326.8"/>
 									</svg>
 								</a>
-								<a href="#">
+								<a href="#" onclick="window.print()">
 									<svg version="1.1" id="Режим_изоляции"
 										 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 473.5 517"
 										 style="enable-background:new 0 0 473.5 517;" xml:space="preserve" width="32" heihgt="34">

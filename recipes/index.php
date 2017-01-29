@@ -334,6 +334,12 @@ array_push($arrFilter2 , $arrFilter);
                 <?endif;?>
 			</div>
 		</section>
+        <!-- MAP --> 
+		<?$APPLICATION->IncludeFile(
+			$APPLICATION->GetTemplatePath("include_areas/map.php"),
+			Array(),
+			Array("MODE"=>"html")
+		);?>
 
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

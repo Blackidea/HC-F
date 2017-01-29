@@ -74,6 +74,7 @@ $APPLICATION->SetTitle("Акции");
 		"USE_SHARE" => "N"
 	)
 );?><br>
+<div class="subscribe-form-wrapper">
  <?$APPLICATION->IncludeComponent(
 	"bitrix:form",
 	"subscribe",
@@ -106,4 +107,7 @@ $APPLICATION->SetTitle("Акции");
 		"VARIABLE_ALIASES" => Array("action"=>"action"),
 		"WEB_FORM_ID" => "3"
 	)
-);?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+<script src="/discount/ajax.js"></script>
+<script src="<?=$APPLICATION->GetTemplatePath("")?>/components/bitrix/form/subscribe/bitrix/form.result.new/.default/ajax.js"></script>
+</div><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
