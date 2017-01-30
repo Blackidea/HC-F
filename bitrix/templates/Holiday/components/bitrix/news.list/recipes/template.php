@@ -13,7 +13,7 @@
 //use Bitrix\Highloadblock as HL; 
 //use Bitrix\Main\Entity; 
 
-require_once($_SERVER["DOCUMENT_ROOT"]."/recipes/ajax.js"); 
+
 $this->setFrameMode(true);?>
 
 <style>
@@ -32,7 +32,7 @@ $this->setFrameMode(true);?>
 </style> 
 <?  
 //echo "<pre>";
-//print_r($arResult);
+//print_r($arResult["ITEMS"]);
 //echo "</pre>";
 $filtered_count = $arResult['filtered_count']; // кол во фильтрованых
 $GLOBALS['filtered_count'] = $filtered_count;  // объявляем глобально
@@ -60,7 +60,9 @@ else{
     <?//echo $GLOBALS['filtered_count']?>
 
 <?foreach($arResult["ITEMS"] as $index=>$arItem):?>
+<?//print_r($arItem['PROPERTIES']);?>
 <? 
+
    // echo $index;
    // if($index == $page)
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));

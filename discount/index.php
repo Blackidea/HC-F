@@ -2,9 +2,9 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Акции");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:news",
-	"discounts",
-	Array(
+	"bitrix:news", 
+	"discounts", 
+	array(
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
@@ -22,11 +22,17 @@ $APPLICATION->SetTitle("Акции");
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "N",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
-		"DETAIL_FIELD_CODE" => array(0=>"",1=>"",),
+		"DETAIL_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"DETAIL_PAGER_SHOW_ALL" => "N",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
-		"DETAIL_PROPERTY_CODE" => array(0=>"",1=>"",),
+		"DETAIL_PROPERTY_CODE" => array(
+			0 => "active_cities",
+			1 => "",
+		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "N",
 		"DISPLAY_DATE" => "Y",
@@ -39,8 +45,14 @@ $APPLICATION->SetTitle("Акции");
 		"IBLOCK_TYPE" => "discounts",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"LIST_FIELD_CODE" => array(0=>"",1=>"",),
-		"LIST_PROPERTY_CODE" => array(0=>"",1=>"",),
+		"LIST_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"LIST_PROPERTY_CODE" => array(
+			0 => "active_cities",
+			1 => "",
+		),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
@@ -55,7 +67,6 @@ $APPLICATION->SetTitle("Акции");
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"SEF_FOLDER" => "/discount/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => array("news"=>"","section"=>"","detail"=>"#ELEMENT_CODE#/",),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
@@ -71,43 +82,16 @@ $APPLICATION->SetTitle("Акции");
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
-		"USE_SHARE" => "N"
-	)
+		"USE_SHARE" => "N",
+		"SEF_URL_TEMPLATES" => array(
+			"news" => "",
+			"section" => "",
+			"detail" => "#ELEMENT_CODE#/",
+		)
+	),
+	false
 );?><br>
-<div class="subscribe-form-wrapper">
- <?$APPLICATION->IncludeComponent(
-	"bitrix:form",
-	"subscribe",
-	Array(
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"CACHE_TIME" => "3600",
-		"CACHE_TYPE" => "A",
-		"CHAIN_ITEM_LINK" => "",
-		"CHAIN_ITEM_TEXT" => "",
-		"EDIT_ADDITIONAL" => "N",
-		"EDIT_STATUS" => "Y",
-		"IGNORE_CUSTOM_TEMPLATE" => "N",
-		"NOT_SHOW_FILTER" => array("",""),
-		"NOT_SHOW_TABLE" => array("",""),
-		"RESULT_ID" => $_REQUEST[RESULT_ID],
-		"SEF_MODE" => "N",
-		"SHOW_ADDITIONAL" => "N",
-		"SHOW_ANSWER_VALUE" => "N",
-		"SHOW_EDIT_PAGE" => "N",
-		"SHOW_LIST_PAGE" => "N",
-		"SHOW_STATUS" => "Y",
-		"SHOW_VIEW_PAGE" => "N",
-		"START_PAGE" => "new",
-		"SUCCESS_URL" => "",
-		"USE_EXTENDED_ERRORS" => "N",
-		"VARIABLE_ALIASES" => Array("action"=>"action"),
-		"WEB_FORM_ID" => "3"
-	)
-);?>
-<script src="/discount/ajax.js"></script>
-<script src="<?=$APPLICATION->GetTemplatePath("")?>/components/bitrix/form/subscribe/bitrix/form.result.new/.default/ajax.js"></script>
-</div><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+
+
+
+<br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

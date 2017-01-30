@@ -60,5 +60,17 @@ $this->setFrameMode(true);
 				</div>
 			</div>
 		</section>
-
+        </div>
         
+        <div class="cities_ids hidden">
+            <? foreach($arResult["DISPLAY_PROPERTIES"]["active_cities"]["VALUE"] as $index=>$value){?>
+                <div data-index="<?=$index?>" class="cities_ids_item"><?=$value?></div>
+            <?}?>
+        </div>
+<!-- MAP --> 
+		<?$APPLICATION->IncludeFile(
+			$APPLICATION->GetTemplatePath("include_areas/map_actions.php"),
+			Array(),
+			Array("MODE"=>"html")
+		);?>
+<div class="container">

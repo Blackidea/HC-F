@@ -270,4 +270,12 @@ $this->setFrameMode(true);
 				</div>
 			</div>
 		</section>
+        </div>
+        <!-- MAP --> 
+		<?$APPLICATION->IncludeFile(
+			$APPLICATION->GetTemplatePath("include_areas/map.php"),
+			Array(),
+			Array("MODE"=>"html")
+		);?>
+        <div class="container">
         

@@ -21,7 +21,7 @@ $categories  = holiday::getAllData($hlArray);
 
 $hlArray = holiday::getHload('b_hlbd_type');
 $type_kitchen  = holiday::getAllData($hlArray);
-
+//print_r($type_kitchen);
 $durations = holiday::getDurations();
 
 
@@ -30,11 +30,15 @@ if (!is_array($arrFilter))
    $arrFilter = array("LOGIC" => "AND");
    $props=array();
    if($_GET['kyhnia']!=""&&$_GET['kyhnia']!="none"){
-    $props["PROPERTY_TYPE"]=$_GET['kyhnia'];
+    foreach ($type_kitchen as $value){
+        if($value['UF_NAME']==$_GET['kyhnia']){
+            $props["PROPERTY_TYPE"]=$value['UF_XML_ID'];
+        }
+    }
    }
    if($_GET['time_max']!="" && $_GET['time_min']!=""){
-    $props[">=PROPERTY_DURATION"]=$_GET['time_min'];
-    $props["<=PROPERTY_DURATION"]=$_GET['time_max'];
+    $props[">=PROPERTY_DURATION_VALUE"]=$_GET['time_min'];
+    $props["<=PROPERTY_DURATION_VALUE"]=$_GET['time_max'];
    }
    if($_GET['uroven']!=""){
     $props["PROPERTY_HARDSHIP"]=$_GET['uroven'];
@@ -63,7 +67,7 @@ array_push($arrFilter2 , $arrFilter);
 
 
 //echo "<pre>";
-//print_r($categories);
+//print_r($arrFilter2);
 //echo "</pre>";
 ?>
 <script>
@@ -205,7 +209,7 @@ array_push($arrFilter2 , $arrFilter);
     							</div>
     							<div class="title">Кухня</div>
     							<select name="kyhnia" data-select>
-                                            <option value="none">Выбрать</option>
+                                            <option value="">Выбрать</option>
                                             <?foreach($type_kitchen as $index=>$type_kitchenData):?>
     										  <option 
                                               <?//if($type_kitchenData['UF_XML_ID']==$_GET['city_select']):?>
@@ -223,7 +227,7 @@ array_push($arrFilter2 , $arrFilter);
                             }
                             $timeMin = $_GET['time_min'];
                             if($_GET['time_min']==""){
-                                $timeMin = min($durations);
+                                //$timeMin = min($durations);
                             }?>
     						<div class="col-md-3">
     							<div class="title">Время приготовления</div>
@@ -245,7 +249,7 @@ array_push($arrFilter2 , $arrFilter);
 			</div>
 			<div class="container">
 				<!-- RECEPT ITEMS-->
-				<div class="recepts_slider row">
+				<div class="recepts_slider js-recepts_slider row">
 					<!-- RECEPT ITEM-->
                     <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
@@ -316,10 +320,10 @@ array_push($arrFilter2 , $arrFilter);
 		"COMPONENT_TEMPLATE" => "recipes"
 	),
 	false
-);?>
-					
-					
-				</div>
+);
+?>
+                </div>
+                <script src="/recipes/ajax.js"></script>
                 <div class="loading-gif">
                     <img src="<?=$APPLICATION->GetTemplatePath("img")?>/loading.gif"/>
                 </div>
