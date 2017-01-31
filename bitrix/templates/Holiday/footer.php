@@ -11,7 +11,28 @@ if($page!="/"):?>
 				<div class="row">
 					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col_footer">
 						<div class="logo_contain">
-							<a href="#" class="hidden-xs hidden-sm"><img src="<?=$APPLICATION->GetTemplatePath("")?>img/logo.svg" alt=""></a>
+                        <?
+                        $page_a = explode("/",$page);
+                        
+                        
+                        switch ($page_a[1]) {
+                            case "kora":
+                                echo "<a href='#' class='hidden-xs hidden-sm'><img src='".$APPLICATION->GetTemplatePath('')."img/logo_kopa.svg' alt=''></a>";
+                                break;
+                            case "planeta-holiday":
+                               echo "<a href='#' class='hidden-xs hidden-sm'><img src='".$APPLICATION->GetTemplatePath('')."img/logo_planet.svg' alt=''></a>";
+                                break;
+                            case "holiday-super":
+                                echo "<a href='#' class='hidden-xs hidden-sm'><img src='".$APPLICATION->GetTemplatePath('')."img/logo_super.svg' alt=''></a>";
+                                break;
+                            case "sibiriada":
+                                echo "<a href='#' class='hidden-xs hidden-sm'><img src='".$APPLICATION->GetTemplatePath('')."img/logo_sibiriada.svg' alt=''></a>";
+                                break;
+                            default:
+                            echo "<a href='#' class='hidden-xs hidden-sm'><img src='".$APPLICATION->GetTemplatePath('')."img/logo.svg' alt=''></a>";
+                        }
+    ?>
+							
 							<div class="phone">
 								телефон горячей линии
 								<span>8-800-765-44-96</span>
@@ -421,7 +442,7 @@ if($page!="/"):?>
         <script src="<?=$APPLICATION->GetTemplatePath("js/scrollbar.js")?>"></script>
         <script src="<?=$APPLICATION->GetTemplatePath("js/art_select.js")?>"></script>
 		<script src="<?=$APPLICATION->GetTemplatePath("js/main.js")?>"></script>
-        
+ 	    
         
         
         <script async src="https://usocial.pro/usocial/usocial.js?v=4.0.0" data-script="usocial" charset="utf-8"></script>

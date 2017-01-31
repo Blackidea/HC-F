@@ -7,10 +7,22 @@ $arUrlRewrite = array(
 		"PATH" => "/examples/my-components/news_sef.php",
 	),
 	array(
+		"CONDITION" => "#^/planeta-holiday/discount/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/planeta-holiday/discount/index.php",
+	),
+	array(
 		"CONDITION" => "#^/bitrix/services/ymarket/#",
 		"RULE" => "",
 		"ID" => "",
 		"PATH" => "/bitrix/services/ymarket/index.php",
+	),
+	array(
+		"CONDITION" => "#^/holiday-super/discount/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/holiday-super/discount/index.php",
 	),
 	array(
 		"CONDITION" => "#^/e-store/books/reviews/#",
@@ -19,16 +31,34 @@ $arUrlRewrite = array(
 		"PATH" => "/e-store/books/reviews/index.php",
 	),
 	array(
-		"CONDITION" => "#^/e-store/xml_catalog/#",
+		"CONDITION" => "#^/planeta-holiday/news/#",
 		"RULE" => "",
-		"ID" => "bitrix:catalog",
-		"PATH" => "/e-store/xml_catalog/index.php",
+		"ID" => "bitrix:news",
+		"PATH" => "/planeta-holiday/news/index.php",
 	),
 	array(
 		"CONDITION" => "#^/communication/forum/#",
 		"RULE" => "",
 		"ID" => "bitrix:forum",
 		"PATH" => "/communication/forum/index.php",
+	),
+	array(
+		"CONDITION" => "#^/e-store/xml_catalog/#",
+		"RULE" => "",
+		"ID" => "bitrix:catalog",
+		"PATH" => "/e-store/xml_catalog/index.php",
+	),
+	array(
+		"CONDITION" => "#^/sibiriada/discount/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/sibiriada/discount/index.php",
+	),
+	array(
+		"CONDITION" => "#^/holiday-super/news/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/holiday-super/news/index.php",
 	),
 	array(
 		"CONDITION" => "#^/communication/blog/#",
@@ -42,15 +72,15 @@ $arUrlRewrite = array(
 		"PATH" => "/vacancies/vacansiya.php",
 	),
 	array(
+		"CONDITION" => "#^/recipes/([0-9]+)/#",
+		"RULE" => "ID=\$1",
+		"PATH" => "/recipes/recipe.php",
+	),
+	array(
 		"CONDITION" => "#^/content/articles/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/content/articles/index.php",
-	),
-	array(
-		"CONDITION" => "#^/recipes/([0-9]+)/#",
-		"RULE" => "ID=\$1",
-		"PATH" => "/recipes/recipe.php",
 	),
 	array(
 		"CONDITION" => "#^/content/gallery/#",
@@ -59,22 +89,34 @@ $arUrlRewrite = array(
 		"PATH" => "/content/gallery/index.php",
 	),
 	array(
+		"CONDITION" => "#^/sibiriada/news/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/sibiriada/news/index.php",
+	),
+	array(
 		"CONDITION" => "#^/kora/discounts/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/kora/discounts/index.php",
 	),
 	array(
-		"CONDITION" => "#^/e-store/books/#",
+		"CONDITION" => "#^/kora/discount/#",
 		"RULE" => "",
-		"ID" => "bitrix:catalog",
-		"PATH" => "/e-store/books/index.php",
+		"ID" => "bitrix:news",
+		"PATH" => "/kora/discount/index.php",
 	),
 	array(
 		"CONDITION" => "#^/content/photo/#",
 		"RULE" => "",
 		"ID" => "bitrix:photogallery",
 		"PATH" => "/content/photo/index.php",
+	),
+	array(
+		"CONDITION" => "#^/e-store/books/#",
+		"RULE" => "",
+		"ID" => "bitrix:catalog",
+		"PATH" => "/e-store/books/index.php",
 	),
 	array(
 		"CONDITION" => "#^/content/news/#",
@@ -87,6 +129,12 @@ $arUrlRewrite = array(
 		"RULE" => "",
 		"ID" => "bitrix:support.faq",
 		"PATH" => "/content/faq/index.php",
+	),
+	array(
+		"CONDITION" => "#^/kora/news/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/kora/news/index.php",
 	),
 	array(
 		"CONDITION" => "#^/discount/#",

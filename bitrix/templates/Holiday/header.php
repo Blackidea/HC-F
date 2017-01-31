@@ -6,14 +6,100 @@
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="<?=$APPLICATION->GetTemplatePath("")?>css/app.min.css">
+<link rel="stylesheet" type="text/css" href="<?=$APPLICATION->GetTemplatePath("")?>css/fonts.css">
+<link rel="stylesheet" type="text/css" href="<?=$APPLICATION->GetTemplatePath("")?>css/reset.css">
+<link rel="stylesheet" type="text/css" href="<?=$APPLICATION->GetTemplatePath("")?>css/bootstrap.css">
+<link rel="stylesheet/less" type="text/css" href="<?=$APPLICATION->GetTemplatePath("")?>css/style.less">
+<link rel="stylesheet/less" type="text/css" href="<?=$APPLICATION->GetTemplatePath("")?>css/responsive.less">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="<?=$APPLICATION->GetTemplatePath("js/less.js")?>"></script>
+<?
+$page = $APPLICATION->GetCurPage();
+$page_a = explode("/",$page);
+if($page_a[1]=="kora"){
+    ?>
+    <script>
+			less.modifyVars({
+				'@color_red': '#0f4b2b',
+				'@color_red_light': '#d71718',
+				'@color_orange': '#d71718',
+				'@color_green': '#edb92c',
+				'@color_pink' :'#fae9cc',
+				'@color_gray': '#d0ccc5'
+			});
+			less.refreshStyles();
+		</script>
+    <?}
+    elseif($page_a[1]=="planeta-holiday"){?>
+    <script>
+			less.modifyVars({
+				'@color_red': '#5b3337',
+				'@color_red_light': '#d71718',
+				'@color_orange': '#e1000f',
+				'@color_green': '#2f67da',
+				'@color_pink' :'#f5dbe7',
+				'@color_gray': '#d0ccc5'
+			});
+			less.refreshStyles();
+		</script>
+
+<?}
+elseif($page_a[1]=="holiday-super"){?>
+    <script>
+			less.modifyVars({
+				'@color_red': '#543067',
+				'@color_red_light': '#7c5c9b',
+				'@color_orange': '#7c5c9b',
+				'@color_green': '#d1050c',
+				'@color_pink' :'#e7deea',
+				'@color_gray': '#d0ccc5'
+			});
+			less.refreshStyles();
+		</script>
+
+
+<?}
+elseif($page_a[1]=="planeta-holiday"){?>
+    <script>
+			less.modifyVars({
+				'@color_red': '#2d3d8e',
+				'@color_red_light': '#d71718',
+				'@color_orange': '#ffa200',
+				'@color_green': '#5480e4',
+				'@color_pink' :'#ffea99',
+				'@color_gray': '#d0ccc5'
+			});
+			less.refreshStyles();
+		</script>
+
+
+
+<?}
+elseif($page_a[1]=="sibiriada"){?>
+    <script>
+			less.modifyVars({
+				'@color_red': '#2d3d8e',
+				'@color_red_light': '#d71718',
+				'@color_orange': '#ffa200',
+				'@color_green': '#5480e4',
+				'@color_pink' :'#ffea99',
+				'@color_gray': '#d0ccc5'
+			});
+			less.refreshStyles();
+		</script
+<?}
+else{
+    
+}
+?>
+
 
 <?$APPLICATION->ShowHead()?>
 <title><?$APPLICATION->ShowTitle()?></title>
 </head>
 
 <body>
-<?$page = $APPLICATION->GetCurPage()?>
+
 <div id="panel"><?$APPLICATION->ShowPanel();?></div>
 	<!-- HEADER -->
 		
@@ -48,9 +134,19 @@
 								C522,294.9,523.5,297.8,525.9,299.9z"/>
 							</svg>
                             <!--<span>Новосибирск</span> -->
-                            <?if($_SESSION["ALTASIB_GEOBASE"]["CITY_NAME"] != ""){
-                                echo "<span>".$_SESSION["ALTASIB_GEOBASE_CODE"]["CITY"]["NAME"]."</span>";
-                            }?>
+                            <?
+                            $arDataC = CAltasibGeoBase::deCodeJSON($APPLICATION->get_cookie("ALTASIB_GEOBASE_CODE"));
+                            
+                            $cityLocation = $arDataC['CITY']['NAME'];
+                            
+                            if(CModule::IncludeModule("altasib.geobase")) {
+                            	$arData = CAltasibGeoBase::GetAddres();
+                            	$cityLocationAuto = $arData['CITY_NAME'];
+                            }
+                            ?>
+                            <?
+                                echo "<span click='altasib_geobase.sc_open();'>".$cityLocation."</span>";
+                            ?>
 							
 						</a>
 						<div class="user_autorization">
@@ -173,6 +269,7 @@
 						c-32.4,0-58.8-26.4-58.8-58.8s26.4-58.8,58.8-58.8s58.8,26.4,58.8,58.8c0,14-5,27.6-14.1,38.2c-2.1,2.4-3.1,5.5-2.8,8.7
 						C522,294.9,523.5,297.8,525.9,299.9z"/>
 					</svg>
+                    
 					<span>Новосибирск</span>
 				</a>
                     <?$APPLICATION->IncludeComponent(

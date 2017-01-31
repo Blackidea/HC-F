@@ -1,5 +1,6 @@
 <script>
 $(document).ready(function(){
+   
     $('input[name="form_hidden_43"]').val(document.title + " "+window.location.href);
     var pagesLinks = $('.js-pager-wrepper').find('a');
     console.log(pagesLinks);

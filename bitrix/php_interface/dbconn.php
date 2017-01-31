@@ -2,9 +2,10 @@
 define("BX_USE_MYSQLI", true);
 define("DBPersistent", false);
 $DBType = "mysql";
+//$DBHost = "127.0.0.1:3306";
 $DBHost = "zmly1.spectrum.myjino.ru";
 $DBLogin = "629975_bx1";
-$DBPassword = "pRqUJpj3b59";
+$DBPassword = "EhBy74Rzy8";
 $DBName = "629975_bx1";
 $DBDebug = false;
 $DBDebugToFile = false;

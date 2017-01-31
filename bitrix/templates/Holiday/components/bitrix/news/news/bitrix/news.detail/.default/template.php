@@ -12,9 +12,10 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<?//print_r($arParams)?>
 <section class="news_full">
     <div class="container">
-        <a href="/news" class="all_news">
+        <a href="<?=$arParams["SECTION_URL"]?>" class="all_news">
             <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     						 viewBox="0 0 28 28" style="enable-background:new 0 0 28 28;" xml:space="preserve">
     					<path id="XMLID_237_" class="st0" d="M19.4,14.5C19.5,14.4,19.5,14.4,19.4,14.5c0.1-0.1,0.1-0.2,0.1-0.2c0,0,0,0,0-0.1
@@ -79,7 +80,7 @@ $this->setFrameMode(true);
                             		"CACHE_TIME" => "36000000",
                             		"CACHE_TYPE" => "A",
                             		"CHECK_DATES" => "Y",
-                            		"DETAIL_URL" => "/news/#ELEMENT_CODE#/",
+                            		"DETAIL_URL" => $arParams["SECTION_URL"]."/#ELEMENT_CODE#/",
                             		"DISPLAY_BOTTOM_PAGER" => "Y",
                             		"DISPLAY_DATE" => "Y",
                             		"DISPLAY_NAME" => "Y",
@@ -89,7 +90,7 @@ $this->setFrameMode(true);
                             		"FIELD_CODE" => array("",""),
                             		"FILTER_NAME" => "",
                             		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                            		"IBLOCK_ID" => 3,
+                            		"IBLOCK_ID" => $arParams['IBLOCK_ID'],
                             		"IBLOCK_TYPE" => "news",
                             		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
                             		"INCLUDE_SUBSECTIONS" => "Y",

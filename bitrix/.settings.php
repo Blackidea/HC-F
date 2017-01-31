@@ -47,7 +47,7 @@ return array (
         'host' => 'zmly1.spectrum.myjino.ru',
         'database' => '629975_bx1',
         'login' => '629975_bx1',
-        'password' => 'pRqUJpj3b59',
+        'password' => 'EhBy74Rzy8',
         'options' => 2,
       ),
     ),

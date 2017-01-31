@@ -12,10 +12,11 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
 <!-- DISCOUNTS FULL -->
 		<section class="discounts_full">
 			<div class="container">
-				<a href="/discount" class="all_news">
+				<a href="<?=$arParams['SECTION_URL']?>" class="all_news">
 					<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 viewBox="0 0 28 28" style="enable-background:new 0 0 28 28;" xml:space="preserve">
 					<path id="XMLID_237_" class="st0" d="M19.4,14.5C19.5,14.4,19.5,14.4,19.4,14.5c0.1-0.1,0.1-0.2,0.1-0.2c0,0,0,0,0-0.1
