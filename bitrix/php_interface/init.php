@@ -136,6 +136,7 @@ class holiday{
              $data['GEO_LONGITUDE'] = $data[1];
              //$img = CFile::GetFileArray($arFields["PREVIEW_PICTURE"]);            
              $result[]= array(
+             'BITRIX_ID'=>$arFields['ID'],
              'STORE'=>$arProps['IMPORT_ID']['VALUE'],
              'STORE_NAME'=>$arProps['STORE_NAME']['VALUE'],
              'LABEL_NAME'=>$arProps['LABEL_NAME']['VALUE'],

@@ -33,6 +33,9 @@ $innerIndex = 0;
     
     <?
     $innerIndex++;
+    if($innerIndex==5){
+        $innerIndex=1;
+    }
     
     if($innerIndex==1){?>
         <?//print_r($arItem)?>

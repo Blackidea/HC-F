@@ -385,7 +385,8 @@
 								cordy=val['GEO_LONGITUDE'],
 								opentime=val['OPEN_TIME'],
 								closetime=val['CLOSE_TIME'],
-								adress=val['ADDRESS'];
+								adress=val['ADDRESS'],
+                                link_id = val['BITRIX_ID'];
 								 var icon = {
 									url: "/bitrix/templates/Holiday/img/map.svg",
 									anchor: new google.maps.Point(0,0),
@@ -404,7 +405,7 @@
 									icon: icon,
 								});
 
-								var content='<div class="map_container"><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div><div class="text">'+adress+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div><div class="text">8 (908) 545-49-76</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div><div class="text">'+opentime+'-'+closetime+'</div></div><div class="icon_set"><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_rol.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_traktor.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_mangal.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_cockie.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_lapsha.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_pizza.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_chiken.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_fish.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_bear.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_tort.svg" alt=""></div><a class="more_link" href="#">Подробнее</a></div>';
+								var content='<div class="map_container"><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div><div class="text">'+adress+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div><div class="text">8 (908) 545-49-76</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div><div class="text">'+opentime+'-'+closetime+'</div></div><div class="icon_set"><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_rol.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_traktor.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_mangal.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_cockie.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_lapsha.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_pizza.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_chiken.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_fish.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_bear.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_tort.svg" alt=""></div><a class="more_link" href="/stores/'+link_id+'/">Подробнее</a></div>';
 								var infowindow = new google.maps.InfoWindow({
 									content: content,
 									maxWidth:241,
@@ -467,6 +468,7 @@
 								cordy=val['GEO_LONGITUDE'],
 								opentime=val['OPEN_TIME'],
 								closetime=val['CLOSE_TIME'],
+                                link_id = val['BITRIX_ID'],
 								adress=val['ADDRESS'];
 								var icon = {
 									url: "/bitrix/templates/Holiday/img/map.svg",
@@ -484,7 +486,7 @@
 									map: map,
 									icon: icon,
 								});
-								var content='<div class="map_container"><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div><div class="text">'+adress+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div><div class="text">8 (908) 545-49-76</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div><div class="text">'+opentime+'-'+closetime+'</div></div><div class="icon_set"><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_rol.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_traktor.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_mangal.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_cockie.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_lapsha.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_pizza.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_chiken.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_fish.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_bear.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_tort.svg" alt=""></div><a class="more_link" href="#">Подробнее</a></div>';
+								var content='<div class="map_container"><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div><div class="text">'+adress+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div><div class="text">8 (908) 545-49-76</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div><div class="text">'+opentime+'-'+closetime+'</div></div><div class="icon_set"><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_rol.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_traktor.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_mangal.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_cockie.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_lapsha.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_pizza.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_chiken.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_fish.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_bear.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_tort.svg" alt=""></div><a class="more_link" href="/stores/'+link_id+'/">Подробнее</a></div>';
 								var infowindow = new google.maps.InfoWindow({
 									content: content,
 									maxWidth:241,
@@ -544,6 +546,7 @@
 								cordy=val['GEO_LONGITUDE'],
 								opentime=val['OPEN_TIME'],
 								closetime=val['CLOSE_TIME'],
+                                link_id = val['BITRIX_ID'],
 								adress=val['ADDRESS'];
 								var icon = {
 									url: "/bitrix/templates/Holiday/img/map.svg",
@@ -561,7 +564,7 @@
 									map: map,
 									icon: icon,
 								});
-								var content='<div class="map_container"><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div><div class="text">'+adress+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div><div class="text">8 (908) 545-49-76</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div><div class="text">'+opentime+'-'+closetime+'</div></div><div class="icon_set"><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_rol.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_traktor.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_mangal.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_cockie.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_lapsha.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_pizza.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_chiken.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_fish.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_bear.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_tort.svg" alt=""></div><a class="more_link" href="#">Подробнее</a></div>';
+								var content='<div class="map_container"><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div><div class="text">'+adress+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div><div class="text">8 (908) 545-49-76</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div><div class="text">'+opentime+'-'+closetime+'</div></div><div class="icon_set"><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_rol.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_traktor.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_mangal.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_cockie.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_lapsha.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_pizza.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_chiken.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_fish.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_bear.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_tort.svg" alt=""></div><a class="more_link" href="/stores/'+link_id+'/">Подробнее</a></div>';
 								var infowindow = new google.maps.InfoWindow({
 									content: content,
 									maxWidth:241,
@@ -728,7 +731,8 @@
 										cordy=val['GEO_LONGITUDE'],
 										opentime=val['OPEN_TIME'],
 										closetime=val['CLOSE_TIME'],
-										adress=val['ADDRESS'];
+										adress=val['ADDRESS'],
+                                        link_id= val['BITRIX_ID'];
 										 var icon = {
 											url: "/bitrix/templates/Holiday/img/map.svg",
 											anchor: new google.maps.Point(0,0),
@@ -747,13 +751,14 @@
 										});
 										marker.setValues({id: $i});
 										markers.push(marker);
-										var content='<div class="map_container"><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div><div class="text">'+adress+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div><div class="text">'+val['PHONE']+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div><div class="text">'+opentime+'-'+closetime+'</div></div><div class="icon_set">'+tags+'</div><a class="more_link" href="href="/stores/'+val['STORE']+'">Подробнее</a></div>';
+          /*на карте на странице stores*/
+										var content='<div class="map_container"><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div><div class="text">'+adress+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div><div class="text">'+val['PHONE']+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div><div class="text">'+opentime+'-'+closetime+'</div></div><div class="icon_set">'+tags+'</div><a class="more_link" href="/stores/'+link_id+'/">Подробнее</a></div>';
 										var infowindow = new google.maps.InfoWindow({
 											content: content,
 											maxWidth:241,
 											pixelOffset: new google.maps.Size(-240,198)
 										});
-										$stotes_list_html+='<li class="marker marker_id_'+$i+'"><div class="items_set"><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div><div class="text">'+val['ADDRESS']+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div><div class="text">'+val['PHONE']+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div><div class="text">'+val['OPEN_TIME']+' - '+val['CLOSE_TIME']+'</div></div></div><a class="more_link" data-markerid="'+$i+'" data-merkerx="'+parseFloat(cordx)+'" data-merkery="'+parseFloat(cordy)+'" href="/stores/'+val['STORE']+'">Подробнее</a><div class="icon_set">'+tags+'</div></li>';
+										$stotes_list_html+='<li class="marker marker_id_'+$i+'"><div class="items_set"><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div><div class="text">'+val['ADDRESS']+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div><div class="text">'+val['PHONE']+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div><div class="text">'+val['OPEN_TIME']+' - '+val['CLOSE_TIME']+'</div></div></div><a class="more_link" data-markerid="'+$i+'" data-merkerx="'+parseFloat(cordx)+'" data-merkery="'+parseFloat(cordy)+'" href="/stores/'+link_id+'/">Подробнее</a><div class="icon_set">'+tags+'</div></li>';
 										marker.addListener('click', function() {
 											infowindow.open(map, marker);
 											map.setCenter(marker.position);
