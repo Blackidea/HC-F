@@ -333,8 +333,8 @@ else{
 
 
 <?
-//echo $page;
-if($page!="/"):?>
+
+if($page!="/"&&$page!="/kora/"&&$page!="/planeta-holiday/"&&$page!="/holiday-super/"&&$page!="/sibiriada/"):?>
     <div class="container">
 <?endif;?>
 

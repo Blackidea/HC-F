@@ -115,7 +115,7 @@
   .recepts.margin_background {
     margin-top: -180px;
     padding-top: 180px;
-    background: url(../img/background_main.jpg) top center no-repeat;
+    background: url(/bitrix/templates/Holiday/img/background_main.jpg) top center no-repeat;
     background-size: cover;
   }
   .recepts .arrow_left {
@@ -137,7 +137,7 @@
     margin-top: 24px;
     width: 11px;
     height: 19px;
-    background: url(../img/arrow_left.svg) center no-repeat;
+    background: url(/bitrix/templates/Holiday/img/arrow_left.svg) center no-repeat;
     z-index: 99;
   }
   .recepts .arrow_right {
@@ -159,7 +159,7 @@
     width: 11px;
     height: 19px;
     transform: rotate(180deg);
-    background: url(../img/arrow_left.svg) center no-repeat;
+    background: url(/bitrix/templates/Holiday/img/arrow_left.svg) center no-repeat;
     z-index: 99;
   }
   .recepts .recepts_slider .item {
@@ -610,7 +610,7 @@
   }
   .feedback {
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-    background: url(../img/bg_feedback.jpg) center no-repeat;
+    background: url(/bitrix/templates/Holiday/img/bg_feedback.jpg) center no-repeat;
     background-size: cover;
     padding-top: 109px;
     padding-bottom: 168px;

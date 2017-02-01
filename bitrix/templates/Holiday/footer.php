@@ -2,7 +2,7 @@
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 IncludeTemplateLangFile(__FILE__);
 
-if($page!="/"):?>
+if($page!="/"&&$page!="/kora/"&&$page!="/planeta-holiday/"&&$page!="/holiday-super/"&&$page!="/sibiriada/"):?>
     </div>
 <?endif;?>
 <!-- FOOTER -->
@@ -418,7 +418,7 @@ if($page!="/"):?>
 		<!-- UP BUTTON -->
 		<div class="button_up">
 			<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-				 viewBox="0 0 19 11" style="enable-background:new 0 0 19 11;" xml:space="preserve">
+				 viewBox="0 0 19 11" style="enable-background:new 0 0 19 11; margin-top: 10px;" xml:space="preserve">
 			<style type="text/css">
 				.st0{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 			</style>
