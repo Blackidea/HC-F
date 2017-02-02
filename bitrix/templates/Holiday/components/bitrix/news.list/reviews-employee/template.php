@@ -40,7 +40,7 @@ $innerIndex = 0;
     width: 100%;
 }
 </style>
-		<section class="reviews_agenstva">
+    <section class="reviews_agenstva">
 			<div class="container">
 				<h2>Отзывы сотрудников</h2>
 				<div class="reviews_list row">
@@ -55,12 +55,11 @@ $innerIndex = 0;
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>               
-					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+    
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 						<div class="item_review">
-							<a href="#" class="image">
-                                <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?echo $arItem["NAME"]?>">
-                            </a>
-							<div class="copany"><?=$arItem["NAME"]?></div>
+							<a href="#" class="image"><img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?echo $arItem["NAME"]?>"></a>
+							<div class="name"><?echo $arItem["NAME"]?></div>
 							<div class="item_bar"> 
 								<div class="rating rating_ratio_<?=$arItem['PROPERTIES']['ratio']['VALUE']?>"></div>
 								<div class="date"><?echo $arItem["DISPLAY_ACTIVE_FROM"]?></div>
@@ -68,9 +67,36 @@ $innerIndex = 0;
 							<div class="desc">
 								<?=$arItem["PREVIEW_TEXT"]?>
 							</div>
-							<a href="#review_<?=$index?>" data-showpopup="#popup_review" class="more_link">Подробнее</a>
+							<a href="#" data-showpopup="#popup_review_<?=$arItem['ID']?>" class="more_link">Подробнее</a>
 						</div>
 					</div>
+                    
+                    <div class="popup_window" id="popup_review_<?=$arItem['ID']?>">
+            			<div class="popup_container">
+            				<div class="close">
+            					<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            						 viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve">
+            					<style type="text/css">
+            						.st0{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+            					</style>
+            					<line id="XMLID_233_" class="st0" x1="20.5" y1="1.5" x2="1.5" y2="20.5"/>
+            					<line id="XMLID_313_" class="st0" x1="1.5" y1="1.5" x2="20.5" y2="20.5"/>
+            					</svg>
+            				</div>
+            				<div class="item_review">
+            					<a href="#" class="image"><img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$arItem["NAME"]?>"></a>
+            					<div class="name"><?=$arItem["NAME"]?></div>
+            					<div class="item_bar"> 
+            						<div class="rating rating_ratio_<?=$arItem['PROPERTIES']['ratio']['VALUE']?>"></div>
+            						<div class="date"><?echo $arItem["DISPLAY_ACTIVE_FROM"]?></div>
+            					</div>
+            					<div class="desc">
+                                    	<?=$arItem["DETAIL_TEXT"]?>
+            					</div>
+            				</div>
+            			</div>
+            			<div class="shadow_site"></div>
+            		</div>
 <?endforeach;?>					
 					
 				</div>

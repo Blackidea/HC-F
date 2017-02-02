@@ -36,10 +36,14 @@ $vacanciesCount = count($arResult["ITEMS"]);
     //print_r($hlArray);
     $dataCity = holiday::getHloadDataByXmlId($hlArrayCity, $arItem['PROPERTIES']['city']['VALUE']);
     //print_r($data);
+    
      $hlArrayShop = holiday::getHload($arItem['PROPERTIES']['shop']['USER_TYPE_SETTINGS']['TABLE_NAME']);
+     
+     echo $hlArrayShop;
     //print_r($hlArray);
     $dataShop = holiday::getHloadDataByXmlId($hlArrayShop, $arItem['PROPERTIES']['shop']['VALUE']);
     //print_r($dataShop);
+    //echo $arItem['PROPERTIES']['shop']['VALUE'];    
 
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));

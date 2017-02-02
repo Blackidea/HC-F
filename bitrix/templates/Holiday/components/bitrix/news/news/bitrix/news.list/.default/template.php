@@ -60,7 +60,26 @@ $this->setFrameMode(true);
                             <div class="desc"><?echo $arItem["PREVIEW_TEXT"];?></div>
                         <?endif;?>
                         <div class="share_list">
-                            <div class="uSocial-Share" data-pid="f2d468e4c9f2d2dd464e3c801b5d6761" data-type="share" data-options="round-rect,style2,absolute,horizontal,size24,eachCounter1,counter0" data-social="vk,ok,fb,twi,gPlus" data-mobile="vi,wa,telegram,sms"></div>
+								<a href="#" class="vk">
+									<span class="icon"></span>
+									<span>47</span>
+								</a>
+								<a href="#" class="odnoklassniki">
+									<span class="icon"></span>
+									<span>27</span>
+								</a>
+								<a href="#" class="facebook">
+									<span class="icon"></span>
+									<span>54</span>
+								</a>
+								<a href="#" class="twitter">
+									<span class="icon"></span>
+									<span>50</span>
+								</a>
+								<a href="#" class="google">
+									<span class="icon"></span>
+									<span>58</span>
+								</a>
 				        </div>
 				    </div>
 				</div>
@@ -71,9 +90,7 @@ $this->setFrameMode(true);
         </div>
         <div class="text-center">
             <a href="#" data-counter="<?=$GLOBALS['pagesCount']?>" class="js-more-news button">Показать еще</a>
-            
         </div>
-        
     </div>
 </section>
 <!-- SUBSCRIBE -->

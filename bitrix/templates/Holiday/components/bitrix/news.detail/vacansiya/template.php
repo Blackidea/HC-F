@@ -15,7 +15,15 @@ $this->setFrameMode(true);
 <?
 //echo "<pre>";
 //print_r($arResult);
-//echo "</pre>";
+//echo "</pre>";  
+echo $arResult['PROPERTIES']['shop']['USER_TYPE_SETTINGS']['TABLE_NAME'];
+echo $arResult['PROPERTIES']['shop']['VALUE'];
+
+$hlArrayShop = holiday::getHload($arItem['PROPERTIES']['shop']['USER_TYPE_SETTINGS']['TABLE_NAME']);
+$dataShop = holiday::getHloadDataByXmlId($hlArrayShop, $arResult['PROPERTIES']['shop']['VALUE']);
+
+print_r($dataShop);
+echo $dataShop[0]['UF_FILE'];
 ?>
 <section class="vakancy_full">
 			<div class="container">
@@ -61,8 +69,9 @@ $this->setFrameMode(true);
 							<div class="text"><?= FormatDate('j m Y', MakeTimeStamp($arResult['DATE_CREATE']));?></div>
 						</span>
 					</div>
+                    <?= CFile::GetPath($dataShop[0]['UF_FILE'])?>
 					<div class="col-sm-3 col-md-3 col-lg-3">
-						<div class="logo"><img src="img/logo.svg" width="98" height="49" alt=""></div>
+						<div class="logo"><img src="<?= CFile::GetPath($dataShop[0]['UF_FILE'])?>" alt=""></div>
 					</div>
 				</div>
 				<div class="vakansy_container row">

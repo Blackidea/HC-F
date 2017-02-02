@@ -4081,7 +4081,7 @@ footer .social_buttons .social_list a:hover svg .st1 {
           justify-content: center;
 }
 .vakansy .vakansy_list .item .logo img {
-  max-width: 98px;
+ 
 }
 .vakancy_full .all_news {
   margin-bottom: 11px;
@@ -6352,6 +6352,10 @@ footer .social_buttons .social_list a:hover svg .st1 {
   .discounts_full .discounts_content {
     max-width: 650px;
   }
+}
+.reviews_list .popup_window{display: none;}
+.popup_container .item_review:hover{
+        box-shadow: none!important;
 }
 /*
 .test{

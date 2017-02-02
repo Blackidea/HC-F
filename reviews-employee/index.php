@@ -71,4 +71,12 @@ $APPLICATION->IncludeComponent(
 	),
 	false
 );?>
+</div>
+  <!-- MAP --> 
+		<?$APPLICATION->IncludeFile(
+			$APPLICATION->GetTemplatePath("include_areas/map.php"),
+			Array(),
+			Array("MODE"=>"html")
+		);?>
+<div class="container">
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
