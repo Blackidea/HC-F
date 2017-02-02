@@ -6,9 +6,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $APPLICATION->SetTitle("Вакансия");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:news.detail",
-	"vacansiya",
-	Array( 
+	"bitrix:news.detail", 
+	"store", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -31,10 +31,13 @@ $APPLICATION->SetTitle("Вакансия");
 		"DISPLAY_TOP_PAGER" => "N",
 		"ELEMENT_CODE" => "",
 		"ELEMENT_ID" => $_REQUEST["ID"],
-		"FIELD_CODE" => array("DATE_CREATE",""),
+		"FIELD_CODE" => array(
+			0 => "DATE_CREATE",
+			1 => "",
+		),
 		"IBLOCK_ID" => "26",
 		"IBLOCK_TYPE" => "stores",
-		"IBLOCK_URL" => "#IBLOCK_CODE#",
+		"IBLOCK_URL" => "/stores",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
@@ -43,7 +46,15 @@ $APPLICATION->SetTitle("Вакансия");
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Страница",
-		"PROPERTY_CODE" => array(""),
+		"PROPERTY_CODE" => array(
+			0 => "LABEL_NAME",
+			1 => "CLOSE_TIME",
+			2 => "OPEN_TIME",
+			3 => "TAGS",
+			4 => "STORE_NAME",
+			5 => "GEO",
+			6 => "",
+		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -53,6 +64,8 @@ $APPLICATION->SetTitle("Вакансия");
 		"SET_TITLE" => "Y",
 		"SHOW_404" => "N",
 		"USE_PERMISSIONS" => "N",
-		"USE_SHARE" => "N"
-	)
+		"USE_SHARE" => "N",
+		"COMPONENT_TEMPLATE" => "store"
+	),
+	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

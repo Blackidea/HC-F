@@ -2758,7 +2758,7 @@ footer .social_buttons .social_list a:hover svg .st1 {
   margin-top: 24px;
   width: 11px;
   height: 19px;
-  background: url(bitrix/templates/Holiday/img/arrow_left.svg) center no-repeat;
+  background: url(/bitrix/templates/Holiday/img/arrow_left.svg) center no-repeat;
   z-index: 99;
 }
 .catalog .catalog_slider .arrow_right {
@@ -2785,7 +2785,7 @@ footer .social_buttons .social_list a:hover svg .st1 {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
-  background: url(bitrix/templates/Holiday/img/arrow_left.svg) center no-repeat;
+  background: url(/bitrix/templates/Holiday/img/arrow_left.svg) center no-repeat;
   z-index: 99;
 }
 .catalog .catalog_slider .items_container {
@@ -5134,7 +5134,7 @@ footer .social_buttons .social_list a:hover svg .st1 {
     margin-top: 24px;
     width: 11px;
     height: 19px;
-    background: url(bitrix/templates/Holiday/img/arrow_left.svg) center no-repeat;
+    background: url(/bitrix/templates/Holiday/img/arrow_left.svg) center no-repeat;
     z-index: 99;
   }
   .recepts .arrow_right {
@@ -5159,7 +5159,7 @@ footer .social_buttons .social_list a:hover svg .st1 {
     -webkit-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
             transform: rotate(180deg);
-    background: url(bitrix/templates/Holiday/img/arrow_left.svg) center no-repeat;
+    background: url(/bitrix/templates/Holiday/img/arrow_left.svg) center no-repeat;
     z-index: 99;
   }
   .recepts .recepts_slider .item {
@@ -6020,8 +6020,7 @@ footer .social_buttons .social_list a:hover svg .st1 {
     left: 0;
     top: 0;
     z-index: 9999;
-    -webkit-box-shadow: inset -7px -1px 9px 0px rgba(50, 50, 50, 0.35);
-            box-shadow: inset -7px -1px 9px 0px rgba(50, 50, 50, 0.35);
+    
   }
   .catalog .catalog_slider .items .shadow_left .item_shadow {
     content: '';
@@ -6031,8 +6030,7 @@ footer .social_buttons .social_list a:hover svg .st1 {
     left: 0;
     top: 0;
     z-index: 9999;
-    -webkit-box-shadow: inset 7px -1px 9px 0px rgba(50, 50, 50, 0.35);
-            box-shadow: inset 7px -1px 9px 0px rgba(50, 50, 50, 0.35);
+    
   }
   header .user_block {
     padding-left: 0;

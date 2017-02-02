@@ -6,6 +6,9 @@ $APPLICATION->SetTitle("Каталог");
         <script src="<?=$APPLICATION->GetTemplatePath("js/dragdealer.js")?>"></script>
         <script src="<?=$APPLICATION->GetTemplatePath("js/touch.js")?>"></script>
         <script src="<?=$APPLICATION->GetTemplatePath("js/touchswipe.js")?>"></script>
+        <script src="<?=$APPLICATION->GetTemplatePath("js/panzoom.js")?>"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        
 </div>
 <section class="catalog">
 			<h2><?echo $APPLICATION->GetTitle();?></h2>
@@ -113,7 +116,7 @@ $APPLICATION->SetTitle("Каталог");
 										</a>
 									</div>
 								</div>
-							</div>
+							</div>   
 						</div>
 					</div>
 					<div class="visible-xs">
