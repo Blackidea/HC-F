@@ -1,46 +1,46 @@
-<?
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $aMenuLinks = Array(
 	Array(
-		"Акции", 
-		"/discount/", 
+		"Как купить", 
+		"about/howto/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Каталог", 
-		"catalog/", 
+		"Доставка", 
+		"about/delivery/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Рецепты", 
-		"/recipes/", 
+		"О магазине", 
+		"about/", 
+		Array(), 
+		Array(), 
+		"" 
+	),	
+	Array(
+		"Гарантия", 
+		"about/guaranty/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Список покупок", 
-		"/buy-list/", 
-		Array(), 
-		Array(), 
-		"" 
+		"Контакты",
+		"about/contacts/",
+		Array(),
+		Array(),
+		""
 	),
 	Array(
-		"Дисконтные карты", 
-		"/discounts_cards/", 
-		Array(), 
-		Array(), 
-		"" 
+		"Мой кабинет",
+		"personal/",
+		Array(),
+		Array(),
+		"CUser::IsAuthorized()"
 	),
-	Array(
-		"Новости", 
-		"/news/", 
-		Array(), 
-		Array(), 
-		"" 
-	)
 );
 ?>

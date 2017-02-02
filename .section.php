@@ -1,8 +1,8 @@
 <?
-$sSectionName = "Главная";
-$arDirProperties = Array(
-   "description" => "1С-Битрикс: Управление сайтом",
-   "keywords" => "1С-Битрикс, CMS, PHP, bitrix, система управления контентом",
-   "ROBOTS" => "index, follow"
+$sSectionName = "Главная страница";
+$arDirProperties = array(
+   "description" => "Мы предлагаем широкий ассортимент качественной одежды по адекватным ценам.",
+   "keywords" => "женская одежда, мужская одежда, спортивная одежда, тапочки",
+   "robots" => "index, follow"
 );
 ?>
