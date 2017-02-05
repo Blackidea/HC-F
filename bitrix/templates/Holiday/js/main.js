@@ -72,8 +72,14 @@
 				$('.check_ratio a').on('click', function(e){
 					e.preventDefault();
 					var t=$(this);
-					$('.check_ratio a').removeClass('active');
-					t.addClass('active');
+                    if(t.hasClass('active')){
+                        $('.check_ratio a').removeClass('active');
+                    }
+					else{
+					   $('.check_ratio a').removeClass('active');
+					   t.addClass('active');
+					}
+				
 					t.parent().find('#ratio_val').val(t.data('ratio'));
 				});
 
@@ -1358,6 +1364,7 @@
 				});
 				function result_list(){
 					$html='';
+                    $emailHtml='';
 					editbtn='<a class="edit" href="#"><svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 38.9 38.7" style="enable-background:new 0 0 38.9 38.7;" xml:space="preserve"><path d="M24.2,6.5l7.9,7.9l-20,20l-7.9-7.9L24.2,6.5z M38.1,4.5L34.6,1c-1.4-1.4-3.6-1.4-4.9,0l-3.4,3.4l7.9,7.9l3.9-3.9 C39.1,7.3,39.1,5.6,38.1,4.5L38.1,4.5z M0,37.6c-0.1,0.6,0.4,1.2,1.1,1.1l8.8-2.1L2,28.6L0,37.6z M0,37.6"/></svg></a>'
 					json_object={};
 					json_array=[];
@@ -1365,6 +1372,7 @@
 					$('.product_items_list .product_item').each(function(index, el) {
 						var t=$(this),
 							$option_list='',
+                            $email_option_list='',
 							title=t.find('.category_title').find('.title').html(),
 							color=t.find('.category_title').find('.title').css('color');
 							json_option_object={};
@@ -1380,8 +1388,9 @@
 								}
 								if(select_val!='Тип продукта'){
 									 
-									$option_list+='<div class="option" data-itemindex="'+index+'"><div class="name"><div class="before"  style="background:'+color+'"></div><span>'+select_val+'</span><span>'+$(this).find('.desc_field input').val()+' '+$(this).find('.num_field input').val()+'</span></div><div class="controls">'+editbtn+removebtn+'</div></div>';
-								}
+									$option_list+='<div class="option" data-itemindex="'+index+'"><div class="name"><div class="before"  style="background:'+color+'"></div><span class="value1">'+select_val+'</span><span class="value2">'+$(this).find('.desc_field input').val()+' '+$(this).find('.num_field input').val()+'</span></div><div class="controls">'+editbtn+removebtn+'</div></div>';
+								    $email_option_list+='<span class="value1"> '+select_val+' </span><span class="value2">'+$(this).find('.desc_field input').val()+' '+$(this).find('.num_field input').val()+'</span><br>';
+                                }
 								
 							});
 							json_object={
@@ -1389,12 +1398,13 @@
 								products:json_option_object
 							}
 							json_array.push(json_object);
-							
+							$emailHtml+='<div class="item_title" style="color:'+color+'">'+title+'</div>'+$email_option_list+'</div>';
 							$html+='<div class="item" data-product_id="'+t.data('product_id')+'"><div class="item_title" style="color:'+color+'">'+title+'</div>'+$option_list+'</div>';
 					});
 					Cookies.set('items_seved', json_array);
 				 
 					$('#result_list').html($html);
+                    $('.email-list').html($emailHtml);
 				}
 			}
 		},

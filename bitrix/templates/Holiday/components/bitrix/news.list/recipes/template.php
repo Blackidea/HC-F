@@ -32,11 +32,27 @@ $this->setFrameMode(true);?>
 </style> 
 <?  
 //echo "<pre>";
+//print_r($GLOBALS['arrFilter2']);
+//echo "</pre>";
+//echo count($GLOBALS['arrFilter2'][0]);
+//echo "<br>";
+//echo count($GLOBALS['arrFilter2'][1][0]);
+$filtered="N";
+$count_f = count($GLOBALS['arrFilter2'][1][0])+ count($GLOBALS['arrFilter2'][0][0]);
+//echo $count_f;
+if($count_f==0){
+}
+else{
+    $filtered="Y";
+}
+//echo $filtered;
+//echo "<pre>";
 //print_r($arResult["ITEMS"]);
 //echo "</pre>";
 $filtered_count = $arResult['filtered_count']; // кол во фильтрованых
 $GLOBALS['filtered_count'] = $filtered_count;  // объявляем глобально
 // задаем номер страницы
+//echo $_GET['filtered'];
 if($_GET['PAGEN_1']==""){
     $page = 1;
 }
@@ -75,7 +91,7 @@ else{
     }
     ?>
     <?
-    if($index==4&&$page==1){?>
+    if($index==4&&$page==1&&$filtered=="Y"){?>
         <!-- случайный рецепт -->	
                  <div class="item random-recipe">
 						<div class="item_image"><a href="<?=$arItem["DETAIL_PAGE_URL"]?> "><img src="/bitrix/templates/Holiday/img/pic/recept_item_default.jpg" title="Случайный рецепт" alt="Случайный рецепт"/></a></div>

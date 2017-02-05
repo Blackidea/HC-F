@@ -45,7 +45,7 @@ $this->setFrameMode(true);
 				<div class="store_info">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 pull-right">
-							<div class="image"><img src="img/pic/store.jpg" alt=""></div>
+							<div class="image"><img src="<?=$APPLICATION->GetTemplatePath("")?>img/pic/store.jpg" alt=""></div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
 							<div class="store_fields">
@@ -546,6 +546,7 @@ $this->setFrameMode(true);
 			</div>
 		</section>
         <!-- FEEDBACK -->
+        </div>
 		<section class="feedback feedback_contact">
 			<div class="feedback_container">
 				<h2>Откликнуться на вакансию</h2>
@@ -596,3 +597,4 @@ $this->setFrameMode(true);
                 </div>
             </div>
   		</section>
+        <div class="contaier">

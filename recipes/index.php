@@ -72,8 +72,17 @@ array_push($arrFilter2 , $arrFilter);
 ?>
 <script>
 
-    function setRatio(param){
-        $('input[name="uroven"]').val(param);
+    function setRatio(param, obj){
+        if($(obj).hasClass('current')){
+            $('input[name="uroven"]').val('');
+            $(obj).removeClass('current');
+            
+        }
+        else{
+            $('input[name="uroven"]').val(param);
+            $(obj).addClass('current');
+        }
+        
     }
 </script>
 <!-- close container -->
@@ -85,6 +94,7 @@ array_push($arrFilter2 , $arrFilter);
 				<div class="container">
 					<div class="row">
                         <form name="search-recipe" action="/recipes/index.php" method="GET">
+                            
     						<div class="col-md-6 border_right">
     							<div class="title">Категория</div>
     							<div class="chekbox_list">
@@ -103,8 +113,9 @@ array_push($arrFilter2 , $arrFilter);
     							<div class="title">Сложность</div>
                                 
     							<div class="check_ratio">
+                                    
                                     <input type="hidden" name="uroven" value=""/>
-    								<a <?if($_GET['uroven']==1):?>class="active"<?endif;?> href="#" onclick="setRatio(1);">
+    								<a <?if($_GET['uroven']==1):?>class="active"<?endif;?> href="#" onclick="setRatio(1, $(this));">
     									<span>
     										<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     											 viewBox="360.9 161 236.2 208.6" xml:space="preserve">
@@ -122,7 +133,7 @@ array_push($arrFilter2 , $arrFilter);
     										</svg>
     									</span>
     								</a>
-    								<a  <?if($_GET['uroven']==2):?>class="active"<?endif;?> href="#" onclick="setRatio(2);">
+    								<a  <?if($_GET['uroven']==2):?>class="active"<?endif;?> href="#" onclick="setRatio(2, $(this));">
     									<span>
     										<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     											 viewBox="360.9 161 236.2 208.6" xml:space="preserve">
@@ -156,7 +167,7 @@ array_push($arrFilter2 , $arrFilter);
     										</svg>
     									</span>
     								</a>
-    								<a  <?if($_GET['uroven']==3):?>class="active"<?endif;?> href="#" onclick="setRatio(3);">
+    								<a  <?if($_GET['uroven']==3):?>class="active"<?endif;?> href="#" onclick="setRatio(3, $(this));">
     									<span>
     										<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     											 viewBox="360.9 161 236.2 208.6" xml:space="preserve">

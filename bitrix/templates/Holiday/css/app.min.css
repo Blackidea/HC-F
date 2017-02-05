@@ -6366,3 +6366,6 @@ footer .social_buttons .social_list a:hover svg .st1 {
 	mask:url(/bitrix/templates/Holiday/img/icon_search.svg) center no-repeat;
 	fill: currentColor;
 } */
+#send-recipe{
+    display: none;
+}

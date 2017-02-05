@@ -20,13 +20,15 @@ $this->setFrameMode(true);
 //echo "<pre>";
 //print_r($arResult["ITEMS"]);
 //echo "</pre>";
-
+$archiveFileId = '';
 ?>
 <div class="catalog_list row">
 <?//print_r($arResult['ITEMS'])?>
 <?foreach($arResult["ITEMS"] as $arItem):?>
 	<?
-    
+    if($arItem['PROPERTIES']['archive_file']['VALUE']!=''){
+        $archiveFileId = $arItem['PROPERTIES']['archive_file']['VALUE'];
+    }
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
@@ -52,6 +54,7 @@ $this->setFrameMode(true);
 <?endforeach;?>
 </div>
 
+<div class="js-download-link" style="display: none;"><a href="<?=CFile::GetPath($archiveFileId)?>"></a></div>
 <div class="catalog_slider">
     <div class="arrow_left"></div>
     <div class="arrow_right"></div>

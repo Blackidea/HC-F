@@ -334,10 +334,12 @@ $APPLICATION->SetTitle("Собственное производство");
 				</div>
 			</div>
 		</section>
+        </div>
         	<section class="map">
 			<div class="container">
 				<h2>Наши магазины</h2>
 			</div>
 			<div id="map"></div>
 		</section>
+        <div class="container">
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

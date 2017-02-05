@@ -285,6 +285,63 @@ if($page!="/"&&$page!="/kora/"&&$page!="/planeta-holiday/"&&$page!="/holiday-sup
 				</div>
 			</div>
 		</div>
+        <div class="popup_window" id="send-recipe">
+			<div class="popup_container">
+				<div class="close">
+					<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve">
+					<style type="text/css">
+						.st0{fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+					</style>
+					<line id="XMLID_233_" class="st0" x1="20.5" y1="1.5" x2="1.5" y2="20.5"/>
+					<line id="XMLID_313_" class="st0" x1="1.5" y1="1.5" x2="20.5" y2="20.5"/>
+					</svg>
+				</div>
+                <? 
+                require($_SERVER["DOCUMENT_ROOT"]."/ajax-forms/form-recipie-send.js");
+                $APPLICATION->IncludeComponent("bitrix:form", "form-recipie-send", Array(
+                	"AJAX_MODE" => "N",	// Включить режим AJAX
+                		"AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
+                		"AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
+                		"AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
+                		"AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
+                		"CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                		"CACHE_TYPE" => "N",	// Тип кеширования
+                		"CHAIN_ITEM_LINK" => "",	// Ссылка на дополнительном пункте в навигационной цепочке
+                		"CHAIN_ITEM_TEXT" => "",	// Название дополнительного пункта в навигационной цепочке
+                		"EDIT_ADDITIONAL" => "N",	// Выводить на редактирование дополнительные поля
+                		"EDIT_STATUS" => "N",	// Выводить форму смены статуса
+                		"IGNORE_CUSTOM_TEMPLATE" => "N",	// Игнорировать свой шаблон
+                		"NOT_SHOW_FILTER" => array(	// Коды полей, которые нельзя показывать в фильтре
+                			0 => "",
+                			1 => "",
+                		),
+                		"NOT_SHOW_TABLE" => array(	// Коды полей, которые нельзя показывать в таблице
+                			0 => "",
+                			1 => "",
+                		),
+                		"RESULT_ID" => $_REQUEST[RESULT_ID],	// ID результата
+                		"SEF_MODE" => "N",	// Включить поддержку ЧПУ
+                		"SHOW_ADDITIONAL" => "N",	// Показать дополнительные поля веб-формы
+                		"SHOW_ANSWER_VALUE" => "N",	// Показать значение параметра ANSWER_VALUE
+                		"SHOW_EDIT_PAGE" => "N",	// Показывать страницу редактирования результата
+                		"SHOW_LIST_PAGE" => "N",	// Показывать страницу со списком результатов
+                		"SHOW_STATUS" => "N",	// Показать текущий статус результата
+                		"SHOW_VIEW_PAGE" => "N",	// Показывать страницу просмотра результата
+                		"START_PAGE" => "new",	// Начальная страница
+                		"USE_EXTENDED_ERRORS" => "Y",	// Использовать расширенный вывод сообщений об ошибках
+                		"SUCCESS_URL" => "/success.php",	// Страница с сообщением об успешной отправке
+                		"WEB_FORM_ID" => "7",	// ID веб-формы
+                		"COMPONENT_TEMPLATE" => "form-contacts",
+                		"VARIABLE_ALIASES" => array(
+                			"action" => "action",
+                		)
+                	),
+                	false
+                ); ?>
+				
+			</div>
+		</div>
 		<div class="popup_window" id="popup_registration_step">
 			<div class="popup_container">
 				<div class="close">

@@ -19,7 +19,24 @@ CModule::IncludeModule('iblock');
         //$arProps['products_list_str'];
         }
 ?>
-
+<style>
+#send-recipe{
+    display: none;
+}
+.email-list{
+    display: none;
+}
+</style>
+<script>
+$(document).ready(function(){
+   
+    $('.get-recipie-html').click(function(){
+      // console.log($('#result_list').html());
+      $('.recipie-html').val($('.email-list').html());
+    })
+    
+})
+</script>
 
 <section class="buy_list">
 			<h2>Список покупок</h2>
@@ -132,7 +149,7 @@ CModule::IncludeModule('iblock');
 										c4.8,3.5,11,3.4,15.8,0c4.8-3.5,6.7-9.4,4.9-15L121.9,99.4z M121.9,99.4"/>
 									</svg>
 								</a>
-								<a href="#"  title="Отправить на email">
+								<a href="#" class="get-recipie-html" data-showpopup="#send-recipe"  title="Отправить на email">
 									<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 										 viewBox="0 0 392.6 376" style="enable-background:new 0 0 392.6 376;" xml:space="preserve" width="32" heihgt="30">
 									<path d="M389,148.5c-1.8-3.3-4.1-6.2-7-8.6L230,12.3c-19.6-16.4-48-16.4-67.6,0L48.5,108c-6.1,5.1-6.9,14.2-1.8,20.3
@@ -163,7 +180,8 @@ CModule::IncludeModule('iblock');
 									</g>
 									</svg>
 								</a>
-								<a href="#"  title="Печать">
+                                
+								<a href="#" onclick="window.print()" title="Печать">
 									<svg version="1.1" id="Режим_изоляции"
 										 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 473.5 517"
 										 style="enable-background:new 0 0 473.5 517;" xml:space="preserve" width="32" heihgt="31">
@@ -198,6 +216,9 @@ CModule::IncludeModule('iblock');
 							</div>
 						</div>
 					</div>
+                    <div class="email-list">
+                    
+                    </div>
 				</div>
 			</div>
 		</section>
