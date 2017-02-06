@@ -376,7 +376,7 @@
 		initMap: function(){
 			//MAP START
 
-			
+
 			var brands = { 
 		      "kora": ["Минимаркет Кора","Универсам Кора","Супермаркет Кора"],
 		      "holidayClassic": ["Холидей Классик"],
@@ -406,7 +406,8 @@
 						// console.log("eeee");
 
 							
-
+						var lastUsedInfoWindow;
+						var lastUsedMarker;
 						$.each( data, function( key, val ) {
 							var cordx=val['GEO_LATITUDE'],
 								cordy=val['GEO_LONGITUDE'],
@@ -440,6 +441,17 @@
 								});
 
 								marker.addListener('click', function() {
+									if (lastUsedInfoWindow && lastUsedMarker) {
+							      lastUsedInfoWindow.close();
+							      lastUsedMarker.setVisible(true);
+							      lastUsedMarker.set('label', 
+											{
+												text: opentime+'-'+closetime,
+												color: 'white',
+												fontSize: '14px',
+											}
+										)
+							    }
 									marker.setVisible(false);
 									infowindow.open(map, marker);
 									map.setOptions({draggable: false});
@@ -451,9 +463,12 @@
 										}
 									)
 									App.initSVG();
+									lastUsedInfoWindow = infowindow;
+									lastUsedMarker = marker;
 								});
-
+								
 								google.maps.event.addListener(infowindow,'closeclick',function(){
+									
 									marker.setVisible(true);
 									map.setOptions({draggable: true});
 									marker.set('label', 
