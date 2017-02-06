@@ -342,6 +342,7 @@ if($page!="/"&&$page!="/kora/"&&$page!="/planeta-holiday/"&&$page!="/holiday-sup
 				
 			</div>
 		</div>
+        
 		<div class="popup_window" id="popup_registration_step">
 			<div class="popup_container">
 				<div class="close">
@@ -469,9 +470,119 @@ if($page!="/"&&$page!="/kora/"&&$page!="/planeta-holiday/"&&$page!="/holiday-sup
 				</div>
 			</div>
 		</div>
-		
-		
-		
+		<div class="popup_window" id="popup_search">
+           <?$APPLICATION->IncludeComponent("bitrix:search.title", "popuo", Array(
+	"CATEGORY_0" => array(	// Ограничение области поиска
+			0 => "iblock_news",
+		),
+		"CATEGORY_0_TITLE" => "Новости",	// Название категории
+		"CHECK_DATES" => "N",	// Искать только в активных по дате документах
+		"CONTAINER_ID" => "title-search",	// ID контейнера, по ширине которого будут выводиться результаты
+		"INPUT_ID" => "title-search-input",	// ID строки ввода поискового запроса
+		"NUM_CATEGORIES" => "10",	// Количество категорий поиска
+		"ORDER" => "date",	// Сортировка результатов
+		"PAGE" => "#SITE_DIR#search/index.php",	// Страница выдачи результатов поиска (доступен макрос #SITE_DIR#)
+		"SHOW_INPUT" => "Y",	// Показывать форму ввода поискового запроса
+		"SHOW_OTHERS" => "N",	// Показывать категорию "прочее"
+		"TOP_COUNT" => "5",	// Количество результатов в каждой категории
+		"USE_LANGUAGE_GUESS" => "Y",	// Включить автоопределение раскладки клавиатуры
+		"COMPONENT_TEMPLATE" => ".default",
+		"CATEGORY_0_iblock_news" => array(	// Искать в информационных блоках типа "iblock_news"
+			0 => "all",
+		),
+		"CATEGORY_1_TITLE" => "Каталог",	// Название категории
+		"CATEGORY_1" => array(	// Ограничение области поиска
+			0 => "iblock_gallery",
+		),
+		"CATEGORY_1_iblock_gallery" => array(	// Искать в информационных блоках типа "iblock_gallery"
+			0 => "all",
+		),
+		"CATEGORY_2_TITLE" => "Магазины Адреса",	// Название категории
+		"CATEGORY_2" => array(	// Ограничение области поиска
+			0 => "iblock_stores",
+		),
+		"CATEGORY_2_iblock_stores" => array(	// Искать в информационных блоках типа "iblock_stores"
+			0 => "all",
+		),
+		"CATEGORY_3_TITLE" => "Рецепты",	// Название категории
+		"CATEGORY_3" => array(	// Ограничение области поиска
+			0 => "iblock_recipes",
+		),
+		"CATEGORY_3_iblock_recipes" => array(	// Искать в информационных блоках типа "iblock_recipes"
+			0 => "all",
+		),
+		"CATEGORY_4_TITLE" => "Отзывы",	// Название категории
+		"CATEGORY_4" => array(	// Ограничение области поиска
+			0 => "iblock_reviews",
+		),
+		"CATEGORY_4_iblock_reviews" => array(	// Искать в информационных блоках типа "iblock_reviews"
+			0 => "all",
+		),
+		"CATEGORY_5_TITLE" => "Истории",	// Название категории
+		"CATEGORY_5" => array(	// Ограничение области поиска
+			0 => "iblock_stories",
+		),
+		"CATEGORY_5_iblock_stories" => array(	// Искать в информационных блоках типа "iblock_stories"
+			0 => "all",
+		),
+		"CATEGORY_6_TITLE" => "Акции",	// Название категории
+		"CATEGORY_6" => array(	// Ограничение области поиска
+			0 => "iblock_discounts",
+		),
+		"CATEGORY_6_iblock_discounts" => array(	// Искать в информационных блоках типа "iblock_discounts"
+			0 => "all",
+		),
+		"CATEGORY_7_TITLE" => "Вакансии",	// Название категории
+		"CATEGORY_7" => array(	// Ограничение области поиска
+			0 => "iblock_vacancies",
+		),
+		"CATEGORY_7_iblock_vacancies" => array(	// Искать в информационных блоках типа "iblock_vacancies"
+			0 => "all",
+		),
+		"CATEGORY_8_TITLE" => "Список покупок",	// Название категории
+		"CATEGORY_8" => array(	// Ограничение области поиска
+			0 => "iblock_products_list",
+		),
+		"CATEGORY_8_iblock_products_list" => array(	// Искать в информационных блоках типа "iblock_products_list"
+			0 => "23",
+		),
+		"CATEGORY_9_TITLE" => "",	// Название категории
+		"CATEGORY_9" => "",	// Ограничение области поиска
+	),
+	false
+);?>
+			<div class="shadow_site"></div>
+		</div>
+<?//ВЫБОР ГОРОДА//?>
+		<div class="popup_window" id="popup_get_city">
+			<div class="popup_container">
+				<a href="#" class="close">
+					<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve">
+					<style type="text/css">
+						.st0{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+					</style>
+					<line id="XMLID_233_" class="st0" x1="20.5" y1="1.5" x2="1.5" y2="20.5"/>
+					<line id="XMLID_313_" class="st0" x1="1.5" y1="1.5" x2="20.5" y2="20.5"/>
+					</svg>
+				</a>
+				<div class="container-fluid">
+					<form action="">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6">
+								<div class="title">Укажите Ваш город</div>
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<div class="field"><input type="text"></div>
+								<input type="submit" class="visible-xs" value="ГОТОВО">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="shadow_site"></div>
+		</div>
+<?//ВЫБОР ГОРОДА//?>		
 		<!-- UP BUTTON -->
 		<div class="button_up">
 			<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
