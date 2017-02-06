@@ -116,10 +116,10 @@ else{
 					</div>
 					<div class="col-sm-5 col-md-5 col-lg-4 user_block hidden-xs">
 						<a href="#" class="city">
-							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-								 viewBox="322.5 86 314.7 388.5" xml:space="preserve">
-							<g >
-								<path d="M598.8,298.5l2.3,1c0,0,0-0.1,0.1-0.2L598.8,298.5L598.8,298.5z"/>
+						
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="322.5 86 314.7 388.5" xml:space="preserve">
+							<g>
+								<path d="M598.8,298.5l2.3,1c0,0,0-0.1,0.1-0.2L598.8,298.5L598.8,298.5z"></path>
 								<path d="M323.2,228c-1.4,15.2-0.7,30.3,2,44.9v0.2c0.1,0.6,0.4,2.4,1.1,5.1c2.5,10.9,6,21.3,10.5,31
 									c16.2,38.1,51.3,96.6,127.3,159.6c4.5,3.7,9.9,5.7,15.7,5.7c5.8,0,11.2-2,15.7-5.7c76-63.1,111.2-121.6,127.3-159.5
 									c4.6-10.1,8.2-20.5,10.5-31c0.7-2.8,1-4.6,1.1-5.1v-0.1c1.8-9.8,2.8-19.7,2.8-29.5c0-43-17.1-83.2-48-113.2l0,0
@@ -127,14 +127,25 @@ else{
 									c26.3,25.4,40.8,59.5,40.8,96.1c0,8.5-0.8,17-2.4,25.2c0,0.2,0,0.3-0.1,0.4v0.1l-0.1,0.2c-0.1,0.4-0.3,1.4-0.7,3.1v0.2l-0.1,0.3
 									c-2,9.1-5,18-8.9,26.3l0,0l-0.2,0.5c-15,35.3-47.9,90-119.5,149.8l-1.6,1.3l-1.6-1.3C406.6,389.7,373.7,335,358.7,299.6
 									c-0.1-0.2-0.2-0.4-0.3-0.6c-3.9-8.4-6.9-17.3-8.9-26.3l-0.1-0.4c-0.4-1.6-0.6-2.7-0.7-3.1l0.3-0.2c0-0.1,0-0.3-0.1-0.4
-									c-2.6-12.5-3.2-25.4-2-38.3c6.4-66.4,61.5-118.1,128.2-120.4C511.7,108.5,546.3,121.8,572.6,147.2z"/>
+									c-2.6-12.5-3.2-25.4-2-38.3c6.4-66.4,61.5-118.1,128.2-120.4C511.7,108.5,546.3,121.8,572.6,147.2z"></path>
 							</g>
 							<path d="M525.9,299.9c2.4,2.1,5.5,3.1,8.7,2.8c3.2-0.3,6-1.7,8.1-4.2c12.8-14.9,19.8-33.9,19.8-53.7c0-45.6-37.1-82.6-82.6-82.6
 								c-45.6,0-82.6,37.1-82.6,82.6c0,45.6,37.1,82.6,82.6,82.6c6.6,0,11.9-5.3,11.9-11.9s-5.3-11.9-11.9-11.9
 								c-32.4,0-58.8-26.4-58.8-58.8s26.4-58.8,58.8-58.8s58.8,26.4,58.8,58.8c0,14-5,27.6-14.1,38.2c-2.1,2.4-3.1,5.5-2.8,8.7
-								C522,294.9,523.5,297.8,525.9,299.9z"/>
+								C522,294.9,523.5,297.8,525.9,299.9z"></path>
 							</svg>
-                            <!--<span>Новосибирск</span> -->
+							 <?$APPLICATION->IncludeComponent("altasib:geobase.select.city", "custom", Array(
+                            	"LOADING_AJAX" => "N",	// Подгружать окно "Выбор города" со списком городов ajax-запросом
+                            		"RIGHT_ENABLE" => "N",	// Выводить вместо правой надписи строки "Выберите город" город, определенный автоматически
+                            		"SPAN_LEFT" => "",	// Текстовое поле на левую надпись строки, клик по которой вызывает всплывающее окно
+                            		"SPAN_RIGHT" => "Выберите город",	// Текстовое поле на правую надпись строки, если город не задан или не определен
+                            	),
+                            	false
+                            );?>
+					
+                        
+					</a>
+         <!--               
                             <?
                             $arDataC = CAltasibGeoBase::deCodeJSON($APPLICATION->get_cookie("ALTASIB_GEOBASE_CODE"));
                             
@@ -145,11 +156,16 @@ else{
                             	$cityLocationAuto = $arData['CITY_NAME'];
                             }
                             ?>
-                            <?
-                                echo "<span click='altasib_geobase.sc_open();'>".$cityLocation."</span>";
-                            ?>
-							
-						</a>
+                            <?/*$APPLICATION->IncludeComponent("altasib:geobase.select.city", "custom", Array(
+                            	"LOADING_AJAX" => "N",	// Подгружать окно "Выбор города" со списком городов ajax-запросом
+                            		"RIGHT_ENABLE" => "N",	// Выводить вместо правой надписи строки "Выберите город" город, определенный автоматически
+                            		"SPAN_LEFT" => "Мой город:",	// Текстовое поле на левую надпись строки, клик по которой вызывает всплывающее окно
+                            		"SPAN_RIGHT" => "Выберите город",	// Текстовое поле на правую надпись строки, если город не задан или не определен
+                            	),
+                            	false
+                            );*/?>                            
+                            
+					<!--	</a> -->
 						<div class="user_autorization">
                         <?if($USER->IsAuthorized()){?>
 							<a href="#" class="user_profile" data-showpopup="#popup_login">
@@ -239,7 +255,7 @@ else{
                     		"MENU_CACHE_GET_VARS" => Array()
                     	)
                     );?>
-					<div class="col-sm-1 col-md-1 col-xs-1 nopadding">
+                    <div class="col-sm-1 col-md-1 col-xs-1 nopadding">
 						<a class="search_button" data-showpopup="#popup_search" href="#">
 							<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 viewBox="0 0 27.7 25" xml:space="preserve">
@@ -338,13 +354,7 @@ if($page!="/"&&$page!="/kora/"&&$page!="/planeta-holiday/"&&$page!="/holiday-sup
     <div class="container">
 <?endif;?>
 
-<?/*$APPLICATION->IncludeComponent(
-	"bitrix:search.form",
-	".default",
-	Array(
-		"PAGE" => "/search/" 
-	)
-);*/?>
+
 
 <?/*$APPLICATION->IncludeComponent(
 	"bitrix:system.auth.form",

@@ -597,7 +597,7 @@ header a.city svg {
   fill: #68170f;
 }
 header a.city span {
-  border-bottom: 1px dashed #68170f;
+  border-bottom: none;
 }
 header a.city:hover span {
   border-bottom: 1px dashed #d5310b;

@@ -45,6 +45,8 @@ function JCTitleSearch(arParams)
 
 		if(th)
 		{
+		     // console.log($('.popup_container_search').offset().left);
+		    //  console.log(tbl);
 			var tbl_pos = BX.pos(tbl);
 			tbl_pos.width = tbl_pos.right - tbl_pos.left;
 
@@ -55,7 +57,12 @@ function JCTitleSearch(arParams)
 			_this.RESULT.style.width = (pos.width + th_pos.width) + 'px';
 
 			//Move table to left by width of the first column
-			_this.RESULT.style.left = (pos.left - th_pos.width - 1)+ 'px';
+			//_this.RESULT.style.left = (pos.left - th_pos.width - 1)+ 'px';
+            _this.RESULT.style.left = ($('.popup_container_search').offset().left - th_pos.width - 1+30+15)+ 'px';
+            //_this.RESULT.style.left =  $('.popup_container_search').offset().left;
+            //console.log(pos.left);
+//            console.log(th_pos.width);
+//            console.log(_this.RESULT.style.left);
 
 			//Shrink table when it's too wide
 			if((tbl_pos.width - th_pos.width) > pos.width)
@@ -335,7 +342,7 @@ function JCTitleSearch(arParams)
 			pos = BX.pos(_this.CONTAINER);
 		}
 		pos.width = pos.right - pos.left;
-		_this.RESULT.style.top = (pos.bottom + 2) + 'px';
+		_this.RESULT.style.top = (pos.bottom + 2+10) + 'px';
 		_this.RESULT.style.left = pos.left + 'px';
 		_this.RESULT.style.width = pos.width + 'px';
 		return pos;
