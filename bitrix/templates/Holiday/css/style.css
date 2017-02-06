@@ -462,9 +462,9 @@ header .stores li {
   text-align: center;
   background: white;
   position: relative;
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
+  display: table;
+  // flex-flow: row;
+  // justify-content: center;
   align-items: center;
   transition: 0.5s all;
 }
@@ -503,6 +503,15 @@ header .stores li.item_2 img {
 }
 header .stores li.item_1 img {
   width: 98%;
+}
+.link__city{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.item__inner{
+  display: inline-block;
+
 }
 header a.city {
   margin-right: 60px;

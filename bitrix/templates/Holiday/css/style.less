@@ -486,9 +486,9 @@ header{
 			text-align: center;
 			background: white;
 			position: relative;
-			display: flex;
-			flex-flow:row;
-			justify-content: center;
+			display: table;
+			// flex-flow:row;
+			// justify-content: center;
 			align-items: center;
 			transition:0.5s all;
 			img{
@@ -539,6 +539,14 @@ header{
 				width: 98%; 
 			}
 		}
+	}
+	.link__city{
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+	}
+	.item__inner{
+		display: block;
 	}
 	a.city{
 		margin-right: 60px;
