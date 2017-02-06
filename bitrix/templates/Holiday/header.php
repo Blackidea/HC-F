@@ -20,7 +20,17 @@ $page_a = explode("/",$page);
 /*if($page_a[1]=="kora"){
     ?>
     <script>
+    function setCookie(argBrand){
 
+      if (argBrand == "kora"){
+        
+      }
+      else{
+        break;
+      }
+      $.cookie('click', argBrand)
+    }
+      
 			less.modifyVars({
 				'@color_red': '#0f4b2b',
 				'@color_red_light': '#d71718',
@@ -156,7 +166,7 @@ test();
 <title><?$APPLICATION->ShowTitle()?></title>
 </head>
 
-<body>
+<body data-page="<?=$page_a[1]?>">
 
 <div id="panel"><?$APPLICATION->ShowPanel();?></div>
 	<!-- HEADER -->
