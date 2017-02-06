@@ -125,22 +125,11 @@ function test() {
   }
   else if($.cookie('click') == 'holidaySuper'){
     less.modifyVars({
-        '@color_red': '#5b3337',
-        '@color_red_light': '#d71718',
-        '@color_orange': '#e1000f',
-        '@color_green': '#2f67da',
-        '@color_pink' :'#f5dbe7',
-        '@color_gray': '#d0ccc5'
-    });
-    less.refreshStyles();
-  }
-  else if($.cookie('click') == 'holidayClassic'){
-    less.modifyVars({
-        '@color_red': '#2d3d8e',
-        '@color_red_light': '#d71718',
-        '@color_orange': '#ffa200',
-        '@color_green': '#5480e4',
-        '@color_pink' :'#ffea99',
+        '@color_red': '#543067',
+        '@color_red_light': '#7c5c9b',
+        '@color_orange': '#7c5c9b',
+        '@color_green': '#d1050c',
+        '@color_pink' :'#e7deea',
         '@color_gray': '#d0ccc5'
     });
     less.refreshStyles();
@@ -158,15 +147,6 @@ function test() {
   }
   else{
     
-    less.modifyVars({
-        '@color_red': '#2d3d8e',
-        '@color_red_light': '#d71718',
-        '@color_orange': '#ffa200',
-        '@color_green': '#5480e4',
-        '@color_pink' :'#ffea99',
-        '@color_gray': '#d0ccc5'
-    });
-    less.refreshStyles();
   }
 }
 test();

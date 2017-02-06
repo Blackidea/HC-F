@@ -402,8 +402,8 @@
 								return _.includes( brands[$.cookie('click')], point["LABEL_NAME"] );
 							});
 						}
-						console.log(data);
-						console.log("eeee");
+						// console.log(data);
+						// console.log("eeee");
 
 							
 
